@@ -5,3 +5,54 @@
 .bg{
     background-color: #111827 ;
 }
+.op-25{
+    opacity: .25;
+}
+.op-50{
+    opacity: .50;
+}
+.op-75{
+    opacity: .75;
+}
+.c-y{
+    color: #eab308;
+}
+.border-shado,.border-5,.border{
+    border: 10px solid #eab308;
+    box-shadow:5px #eab308;
+}
+.fixer{
+    /* margin-left: 200px; */
+    /* width: 400px; */
+    /* margin-bottom: -30px; */
+    height: 450px;
+    margin-top: -420px;
+    margin-left: -30px;
+    border: #eab308 3rem solid;
+    
+    
+}
+
+@media screen and (max-width: 600px) {
+    .fixer {
+        height: 270px;
+        margin-top: -245px;
+        margin-left: -20px;
+    }
+    
+  }
+  @media screen and (max-width: 600px) {
+    .me-sm-3 {
+        
+        margin-left: 20px;
+    }
+    
+  }  
+.img-fixer{
+    margin-left: -450px;
+}
+
+
+.bg-body-b{
+    background-color: #020617;
+}

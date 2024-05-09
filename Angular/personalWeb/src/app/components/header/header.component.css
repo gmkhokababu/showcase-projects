@@ -21,3 +21,7 @@ header{
 .c-y{
     color: #eab308;
 }
+.bg{
+    background-color: #020617 ;
+    box-shadow: 3px 0 5px gray;
+}
