@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200/")
+@CrossOrigin("*")
+//@CrossOrigin(origins="http://localhost:4200/")
 public class Controller {
-	private final BlogRepo blogRepo;
 	
 	@Autowired
+	private final BlogRepo blogRepo;
+	
+	
 	public Controller(BlogRepo blogRepo) {
 		this.blogRepo=blogRepo;
 	}
@@ -32,11 +35,12 @@ public class Controller {
 	
 	
 	@PostMapping("/createblog")
-	public Blog postBlog(@RequestBody Blog blog) {
+	public void postBlog(@RequestBody Blog blog) {
+		System.out.println("sham;im");
 		
-		Blog data = blogRepo.save(blog);
+		blogRepo.save(blog);
 		
-		return blog;
+		
 	}
 	
 	
