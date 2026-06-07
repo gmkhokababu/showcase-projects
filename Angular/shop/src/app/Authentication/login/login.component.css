@@ -1,0 +1,7 @@
+.custom_card{
+    width: 80vw; 
+    min-height: 30vw;
+    background-color: aqua;
+    /* color: black; */
+    box-shadow: 0 15px 40px rgba(147, 51, 234, 0.25) ;
+}
