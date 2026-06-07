@@ -1,0 +1,39 @@
+/* .sidebar {
+    background-color: #110c26 !important; 
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+} */
+
+/* সাইড-ন্যাভের মেইন কন্টেইনার */
+.sidebar {
+    height: 100vh; /* পুরো স্ক্রিন সমান লম্বা হবে */
+    background-color: #110c26 !important; /* বডির চেয়ে সামান্য উজ্জ্বল */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+}
+
+/* মেনু লিংকের সাধারণ স্টাইল */
+.nav-link {
+    color: #94a3b8 !important;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+/* মাউস নিলে যেমন দেখাবে */
+.nav-link:hover {
+    background-color: rgba(124, 58, 237, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* যে পেজে ইউজার বর্তমানে থাকবে (Active Link) */
+.nav-link.active {
+    background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
+    color: #ffffff !important;
+}
