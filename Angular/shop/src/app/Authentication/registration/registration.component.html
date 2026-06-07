@@ -1,1 +1,46 @@
-<p>registration works!</p>
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="card py-3 px-3 m-3 my-5 custom_card col-11 col-sm-8 col-md-6 col-lg-4 rounded">
+            <form class="d-grid gap-2">
+                <div class="mb-2">
+                    <label for="username" class="form-label ">Username</label>
+                    <input type="text" class="form-control glass-input" id="username" aria-describedby="username">
+                    <!-- <div id="emailHelp" class="form-text ">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-2">
+                    <label for="name" class="form-label ">Your Full Name</label>
+                    <input type="text" class="form-control glass-input" id="username" aria-describedby="username">
+                    <!-- <div id="emailHelp" class="form-text ">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-2">
+                    <label for="email" class="form-label ">Email</label>
+                    <input type="email" class="form-control glass-input" id="email" aria-describedby="emailHelp">
+                    <!-- <div id="emailHelp" class="form-text ">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-2">
+                    <label for="phone" class="form-label ">Phone Number</label>
+                    <input type="email" class="form-control glass-input" id="email" aria-describedby="emailHelp">
+                    <!-- <div id="emailHelp" class="form-text ">We'll never share your email with anyone else.</div> -->
+                </div>
+                <div class="mb-2">
+                    <label for="Password" class="form-label ">Password</label>
+                    <input type="password" class="form-control glass-input" id="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label ">Re-type Password</label>
+                    <input type="password" class="form-control glass-input" id="Password">
+                </div>
+                <hr>
+                <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input glass-input" id="exampleCheck1">
+                    <label class="form-check-label " for="exampleCheck1">Check me out</label>
+                </div> -->
+                <button type="submit" class="btn glass-btn-gradient-pm px-5 btn-lg  mt-2">Registration</button>
+                <!-- <button type="submit" class="btn glass-btn-gradient-pm px-5 btn-lg mx-auto col-7 col-lg-4">Forget Password</button> -->
+                <div id="emailHelp" class="form-text my-2 mx-auto">Already have an account!</div>
+                <button type="button" class="btn glass-btn-secondary px-5 btn-lg  mb-4" (click)="Login()">Login</button>
+
+            </form>
+        </div>
+    </div>
+</div>

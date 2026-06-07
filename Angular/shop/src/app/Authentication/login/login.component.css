@@ -1,5 +1,5 @@
 .custom_card {
-    width: 80vw;
+    width: 90vw;
     min-height: 30vw;
     /* background-color: #1a1635;
     /* border: 1px solid #2d2757; */ /* ল্যাভেন্ডার/পার্পল */
@@ -40,4 +40,18 @@
 
 .btn_w{
     min-width: 15rm;
+}
+
+@media (min-width:768px) {
+    .custom_card{
+        width: 50vw;
+        min-height: 30vw;
+    }
+}
+
+@media (min-width:1024px) {
+    .custom_card{
+        width: 40vw;
+        min-height: 30vw;
+    }
 }
