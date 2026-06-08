@@ -1,15 +1,15 @@
 <div class="container">
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="card py-5 px-3 m-3 custom_card col-11 col-sm-8 col-md-6 col-lg-4 rounded">
-            <form class="d-grid gap-2">
+            <form class="d-grid gap-2" (submit)="login($event)">
                 <div class="mb-3">
                     <label for="username" class="form-label ">Username</label>
-                    <input type="email" class="form-control glass-input" id="username" aria-describedby="emailHelp">
+                    <input type="text" class="form-control glass-input" id="username" aria-describedby="emailHelp" name="username" [(ngModel)]="username">
                     <!-- <div id="emailHelp" class="form-text ">We'll never share your email with anyone else.</div> -->
                 </div>
                 <div class="mb-3">
                     <label for="Password" class="form-label ">Password</label>
-                    <input type="password" class="form-control glass-input" id="Password">
+                    <input type="password" class="form-control glass-input" id="Password" name="password" [(ngModel)]="password">
                 </div>
                 <hr>
                 <!-- <div class="mb-3 form-check">
@@ -24,4 +24,15 @@
             </form>
         </div>
     </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="loginToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true" style="background: rgba(76, 29, 149, 0.6); backdrop-filter: blur(10px);">
+    <div class="d-flex">
+      <div class="toast-body">
+        Login Successful! Welcome to Admin Panel.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
 </div>
