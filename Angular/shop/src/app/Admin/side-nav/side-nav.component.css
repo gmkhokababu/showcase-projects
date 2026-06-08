@@ -98,3 +98,22 @@
     background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
     color: #ffffff !important;
 }
+
+/* Mobile menu setup */
+
+@media (max-width: 767px) {
+    :host {
+        position: fixed !important;
+        top: 0;
+        left: -250px; /* ডিফল্টভাবে মোবাইলে বামে লুকিয়ে থাকবে */
+        width: 250px;
+        z-index: 1050;
+        transition: left 0.3s ease-in-out;
+    }
+
+    /* যখন সার্ভিস থেকে ওপেন সিগন্যাল আসবে, তখন স্ক্রিনে চলে আসবে */
+    :host-context(.show-sidebar) {
+        left: 0 !important;
+    }
+}
+
