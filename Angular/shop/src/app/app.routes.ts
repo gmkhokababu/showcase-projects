@@ -8,7 +8,7 @@ export const routes: Routes = [
     {path:'login', component: LoginComponent},
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'registration', component: RegistrationComponent},
-    {path: 'admin-p', component: DashboardComponent,
+    {path: 'admin', component: DashboardComponent,
         children:[
             {path: 'home', component: AdminHomeComponent},
             {path: '', redirectTo:'home', pathMatch: 'full'},

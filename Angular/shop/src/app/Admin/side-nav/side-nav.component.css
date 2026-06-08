@@ -10,29 +10,90 @@
 } */
 
 /* সাইড-ন্যাভের মেইন কন্টেইনার */
-.sidebar {
-    height: 100vh; /* পুরো স্ক্রিন সমান লম্বা হবে */
-    background-color: #110c26 !important; /* বডির চেয়ে সামান্য উজ্জ্বল */
+/* .sidebar {
+    height: 100vh; 
+    background-color: #110c26 !important; 
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px;
-}
+    padding: 20px 10px !important;
+} */
 
 /* মেনু লিংকের সাধারণ স্টাইল */
-.nav-link {
+/* .nav-link {
     color: #94a3b8 !important;
     padding: 12px 15px;
     border-radius: 8px;
     margin-bottom: 5px;
     transition: all 0.3s ease;
-}
+} */
 
 /* মাউস নিলে যেমন দেখাবে */
-.nav-link:hover {
+/* .nav-link:hover {
     background-color: rgba(124, 58, 237, 0.1) !important;
+    color: #ffffff !important;
+} */
+
+/* যে পেজে ইউজার বর্তমানে থাকবে (Active Link) */
+/* .nav-link.active {
+    background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
+    color: #ffffff !important;
+} */
+/* ========================================================================= */
+
+/* ==========================================================================
+   UPDATED RESPONSIVE SIDEBAR STYLES (Padding & Text Size Optimization)
+   ========================================================================== */
+
+/* ১. মেইন কন্টেইনারের বাম-ডানের প্যাডিং কমানো হলো */
+.sidebar {
+    height: 100vh; 
+    background-color: #110c26 !important; 
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 24px 12px !important; /* উপরে-নিচে ২৪px, কিন্তু ডানে-বামে মাত্র ১২px (ফাঁকা জায়গা কমে যাবে) */
+}
+
+/* ২. অ্যাডমিন প্যানেল মেইন হেডিং ছোট করা */
+.sidebar h4 {
+    font-size: 1.3rem !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    /* padding-left: 8px; হেডিংটি যেন বামের বর্ডারের সাথে লেগে না যায় */
+    justify-content: center;
+    display: flex;
+}
+
+/* ৩. প্রধান মেনু লিংকের ফন্ট সাইজ এবং প্যাডিং অপ্টিমাইজেশন */
+.nav-link {
+    color: #94a3b8 !important;
+    padding: 8px 12px !important; /* প্যাডিং কমিয়ে বাটনগুলো স্লিম করা হলো */
+    font-size: 0.9rem !important;  /* প্রধান মেনুর ফন্ট সাইজ ছোট করা হলো */
+    border-radius: 6px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+/* ৪. সাব-মেনু লিংকের ফন্ট সাইজ আরও ছোট ও মার্জিত করা */
+.collapse .nav-link.small {
+    font-size: 0.82rem !important; /* সাব-মেনুর ফন্ট পিসির জন্য পারফেক্টলি ছোট */
+    padding: 6px 12px !important;  /* সাব-মেনুর ভেতরের স্পেসিং কমানো হলো */
+    color: #cbd5e1 !important;    /* সাব-মেনুর লেখা সামান্য একটু সফট গ্রে */
+}
+
+/* ৫. আইকনগুলোর সাইজ এবং এলাইনমেন্ট পারফেক্ট করা */
+.nav-link i {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+.collapse .nav-link i {
+    font-size: 0.85rem; /* সাব-মেনুর আইকনগুলোও আনুপাতিকভাবে ছোট */
+}
+
+/* হোভার এবং একটিভ স্টেট আগের মতোই থাকবে */
+.nav-link:hover {
+    background-color: rgba(124, 58, 237, 0.08) !important;
     color: #ffffff !important;
 }
 
-/* যে পেজে ইউজার বর্তমানে থাকবে (Active Link) */
 .nav-link.active {
     background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
     color: #ffffff !important;
