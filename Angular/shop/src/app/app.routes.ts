@@ -5,6 +5,7 @@ import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
 import { PublicHomeComponent } from './public/public-home/public-home.component';
 import { ProductHomeComponent } from './public/product-home/product-home.component';
+import { ProductDetailsComponent } from './public/product-details/product-details.component';
 
 export const routes: Routes = [
     {path:'login', component: LoginComponent},
@@ -12,6 +13,7 @@ export const routes: Routes = [
         children:[
             {path:'item', component:ProductHomeComponent},
             {path: '', redirectTo: 'item', pathMatch: 'full'},
+            {path: 'product-details', component:ProductDetailsComponent},
         ]
     },
 

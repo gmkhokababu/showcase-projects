@@ -49,7 +49,9 @@ export class ProductHomeComponent {
 
   // Redirect to product details page
   viewProductDetails(productId: number) {
-    this.router.navigate(['/product-details', productId]);
-  }
+  this.router.navigate(['/home/product-details'], { 
+    state: { id: productId } 
+  });
+}
 
 }

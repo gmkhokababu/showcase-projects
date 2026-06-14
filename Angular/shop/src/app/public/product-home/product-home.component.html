@@ -6,7 +6,7 @@
       <div class="product-img-wrapper position-relative overflow-hidden">
         <img [src]="product.image" class="card-img-top product-img" [alt]="product.name">
         <div class="img-overlay d-flex align-items-center justify-content-center">
-          <span class="btn btn-sm btn-purple-view px-3">View Details</span>
+          <span class="btn btn-sm btn-purple-view px-3" (click)="viewProductDetails(product.id)">View Details</span>
         </div>
       </div>
 
