@@ -2,10 +2,14 @@ import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { PublicTopNavComponent } from '../public-top-nav/public-top-nav.component';
 
 @Component({
   selector: 'app-product-details',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    PublicTopNavComponent,
+  ],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })

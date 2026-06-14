@@ -33,6 +33,23 @@ export class PublicTopNavComponent {
     });
   }
 
+  trackOrder(){
+    Swal.fire({
+      title: 'Please Wait!',
+      text: 'Redirecting you to the order tracking...',
+      icon: 'info',
+      background: '#110c26',
+      color: '#ffffff',
+      confirmButtonColor: '#7c3aed',
+      timer: 1000,
+      showConfirmButton: false,
+      timerProgressBar: true
+    }).then(() => {
+      // সুইটঅ্যালার্ট শেষ হলে অটোমেটিক তোমার সেই Authentication/Login পেজে নিয়ে যাবে
+      this.router.navigate(['/track-order']); 
+    });
+  }
+
 
   // Listen to window scroll event
   @HostListener('window:scroll', [])
@@ -40,4 +57,13 @@ export class PublicTopNavComponent {
     // If scrolled more than 10px, change background
     this.isScrolled = window.scrollY > 10;
   }
+
+  home(){
+    this.router.navigate(['/home']); 
+  }
+
+
+
+
+  
 }
