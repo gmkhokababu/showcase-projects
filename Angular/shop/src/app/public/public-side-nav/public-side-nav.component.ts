@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-public-side-nav',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './public-side-nav.component.html',
   styleUrl: './public-side-nav.component.css'
 })
