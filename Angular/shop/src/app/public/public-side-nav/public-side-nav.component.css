@@ -1,0 +1,66 @@
+/* ==========================================================================
+   PUBLIC CATEGORY SIDEBAR STYLE (Compact & Sleek)
+   ========================================================================== */
+
+/* মেইন ক্যাটাগরি বক্সের গ্লাস ব্যাকগ্রাউন্ড */
+.category-sidebar {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+     backdrop-filter: none !important;
+    border: none !important; /* চারপাশের বর্ডার বাতিল */
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important; 
+     /* border-radius: 0 !important;  */
+     /* গোল কোনা বাতিল */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: calc(100vh - 90px); /* টপ ন্যাভের নিচে সুন্দরভাবে ফিট হয়ে থাকবে */
+}
+
+/* ক্যাটাগরি হেডার টেক্সট */
+.category-header {
+    font-size: 0.85rem !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.text-purple-light {
+    color: #a78bfa;
+}
+
+/* প্রতিটি ক্যাটাগরি বাটনের স্লিম ডিজাইন (ফন্ট সাইজ ছোট) */
+.category-link {
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important; /* প্রফেশনাল ছোট ফন্ট সাইজ */
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* মাউস নিলে হালকা পার্পল ব্যাকগ্রাউন্ড গ্লো হবে */
+.category-link:hover {
+    background-color: rgba(124, 58, 237, 0.08) !important;
+    color: #ffffff !important;
+}
+
+/* যে ক্যাটাগরি সিলেক্ট করা থাকবে (Active State) */
+.category-link.active {
+    background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* আইকনগুলোর সাইজ অপ্টিমাইজেশন */
+.category-link i {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.category-link:hover i, 
+.category-link.active i {
+    opacity: 1;
+}

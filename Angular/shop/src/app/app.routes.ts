@@ -3,10 +3,20 @@ import { LoginComponent } from './Authentication/login/login.component';
 import { RegistrationComponent } from './Authentication/registration/registration.component';
 import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
+import { PublicHomeComponent } from './public/public-home/public-home.component';
+import { ProductHomeComponent } from './public/product-home/product-home.component';
 
 export const routes: Routes = [
     {path:'login', component: LoginComponent},
-    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path:'home', component:PublicHomeComponent,
+        children:[
+            {path:'item', component:ProductHomeComponent},
+            {path: '', redirectTo: 'item', pathMatch: 'full'},
+        ]
+    },
+
+    
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'registration', component: RegistrationComponent},
     {path: 'admin', component: DashboardComponent,
         children:[

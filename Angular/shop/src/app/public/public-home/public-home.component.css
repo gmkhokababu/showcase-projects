@@ -1,0 +1,9 @@
+/* পাবলিক ল্যান্ডিং পেজের মেইন গ্লোবাল ব্যাকগ্রাউন্ড */
+.public-landing-wrapper {
+    min-height: 100vh;
+    /* ড্যাশবোর্ডের সেই প্রিমিয়াম ডিপ পার্পল থিম মেইনটেইন করা হলো */
+    background-color: #090712 !important; 
+    background-image: radial-gradient(at 50% 0%, #110c22 0px, transparent 60%), 
+                      radial-gradient(at 0% 100%, #0d091a 0px, transparent 50%);
+    background-attachment: fixed;
+}
