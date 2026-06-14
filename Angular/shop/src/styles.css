@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import "bootstrap/dist/css/bootstrap.min.css";
 @import "bootstrap-icons/font/bootstrap-icons.css"; */
-
 .glass-btn-gradient-pm {
     /* কালার দুটিকে অনেক গাঢ় ও গভীর পার্পল-মেরুন টোনে নামিয়ে আনা হলো */
     background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;

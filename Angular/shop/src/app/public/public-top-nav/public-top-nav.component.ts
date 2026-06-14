@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component,HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-public-top-nav',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './public-top-nav.component.html',
   styleUrl: './public-top-nav.component.css'
 })
 export class PublicTopNavComponent {
+
+  // Boolean to track if page is scrolled
+  isScrolled = false;
 
   constructor(private router: Router) {}
 
@@ -29,4 +33,11 @@ export class PublicTopNavComponent {
     });
   }
 
+
+  // Listen to window scroll event
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    // If scrolled more than 10px, change background
+    this.isScrolled = window.scrollY > 10;
+  }
 }

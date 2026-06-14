@@ -1,4 +1,4 @@
-<nav class="navbar public-top-glass px-4 d-flex justify-content-between align-items-center">
+<nav class="navbar public-top-glass px-4 d-flex justify-content-between align-items-center" [class.scrolled]="isScrolled">
   
   <!-- ১. বাম পাশ: ব্র্যান্ডের নাম এবং লোগো -->
   <div class="d-flex align-items-center gap-2 brand-wrapper">
@@ -23,7 +23,12 @@
       <!-- কার্টে কয়টি আইটেম আছে তার ছোট পার্পল ব্যাজ -->
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-purple-badge">0</span>
     </button>
+    <!-- <span class="fi fi-bd"></span> -->
 
+    <!-- লগইন বাটন (তোমার সেই সুইটঅ্যালার্ট ট্রিলারের জন্য রেডি) -->
+    <button class="btn public-login-btn px-3 py-1.5 fw-bold" type="button" (click)="openLoginAlert()">
+      Track Order
+    </button>
     <!-- লগইন বাটন (তোমার সেই সুইটঅ্যালার্ট ট্রিলারের জন্য রেডি) -->
     <button class="btn public-login-btn px-3 py-1.5 fw-bold" type="button" (click)="openLoginAlert()">
       Login

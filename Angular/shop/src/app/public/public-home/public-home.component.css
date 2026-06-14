@@ -7,3 +7,19 @@
                       radial-gradient(at 0% 100%, #0d091a 0px, transparent 50%);
     background-attachment: fixed;
 }
+
+/* .top_nav{
+    
+} */
+
+/* Media query for tablets and desktops */
+@media (min-width: 768px) {
+    .custom-sidebar {
+        /* Adjust top value based on your top navbar height so it doesn't overlap */
+        top: 70px; 
+        /* Total height minus navbar space */
+        max-height: calc(100vh - 90px); 
+        overflow-y: auto;
+        z-index: 1020;
+    }
+}
