@@ -2,7 +2,8 @@
   
   <!-- ১. বাম পাশ: ব্র্যান্ডের নাম এবং লোগো -->
   <div class="d-flex align-items-center gap-2 brand-wrapper" type="button" (click)="home()">
-    <i class="bi bi-hexagon-half brand-logo-icon"></i> <!-- একটি মডার্ন স্লিম লোগো আইকন -->
+    <!-- <i class="bi bi-hexagon-half brand-logo-icon"></i> একটি মডার্ন স্লিম লোগো আইকন -->
+     <img class="logo " src="/favicon/favicon.svg" alt="logo">
     <span class="public-brand-title">Root Field</span>
   </div>
 
@@ -18,7 +19,7 @@
   <div class="d-flex align-items-center gap-3">
     
     <!-- শপিং কার্ট বাটন উইথ নোটিফিকেশন ব্যাজ -->
-    <button class="btn public-cart-btn position-relative" title="Shopping Cart">
+    <button class="btn public-cart-btn position-relative" title="Shopping Cart" (click)="cart()">
       <i class="bi bi-cart3 fs-5"></i>
       <!-- কার্টে কয়টি আইটেম আছে তার ছোট পার্পল ব্যাজ -->
       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-purple-badge">0</span>

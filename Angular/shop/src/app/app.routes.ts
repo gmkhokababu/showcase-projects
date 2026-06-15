@@ -7,6 +7,7 @@ import { PublicHomeComponent } from './public/public-home/public-home.component'
 import { ProductHomeComponent } from './public/product-home/product-home.component';
 import { ProductDetailsComponent } from './public/product-details/product-details.component';
 import { TrackOrderComponent } from './public/track-order/track-order.component';
+import { CartComponent } from './public/cart/cart.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -21,7 +22,7 @@ export const routes: Routes = [
 
     { path: 'product-details', component: ProductDetailsComponent },
     { path: 'track-order', component: TrackOrderComponent },
-
+    {path:'cart', component:CartComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'registration', component: RegistrationComponent },
     {

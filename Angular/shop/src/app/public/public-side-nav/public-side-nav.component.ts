@@ -20,7 +20,7 @@ export class PublicSideNavComponent implements OnInit {
   ];
 
   // কোন ক্যাটাগরি বর্তমানে সিলেক্টেড তা ট্র্যাক করার জন্য (ডিফল্ট ১ম টা)
-  selectedCategoryId: number = 1; 
+  selectedCategoryId: number = 0; 
 
   constructor() { }
 

@@ -62,6 +62,9 @@ export class PublicTopNavComponent {
     this.router.navigate(['/home']); 
   }
 
+  cart(){
+    this.router.navigate(['/cart']);
+  }
 
 
 

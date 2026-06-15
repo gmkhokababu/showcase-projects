@@ -1,5 +1,126 @@
-<div class="col">
-    <div class="row">
-        <app-public-top-nav></app-public-top-nav>
+<div class="track-page-wrapper">
+  
+  <div class="sticky-top w-100">
+    <app-public-top-nav></app-public-top-nav>
+  </div>
+  
+  <div class="container-xl px-3 mt-4 pb-5">
+    
+    <div class="search-card p-4 mb-4 mx-auto">
+      <h5 class="search-title mb-4"><i class="bi bi-search me-2 text-purple"></i> Track Your Order</h5>
+      
+      <div class="d-flex gap-4 mb-4 custom-radio-group">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchType" id="orderRadio" 
+                 [checked]="searchType === 'order'" (change)="onSearchTypeChange('order')">
+          <label class="form-check-label text-white" for="orderRadio">Order Number</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="searchType" id="userRadio" 
+                 [checked]="searchType === 'user'" (change)="onSearchTypeChange('user')">
+          <label class="form-check-label text-white" for="userRadio">Phone / User ID</label>
+        </div>
+      </div>
+
+      <div class="search-box-container">
+        <div class="input-wrapper mb-3">
+          <i class="bi bi-hash input-icon"></i>
+          <input type="text" class="form-control" [(ngModel)]="searchQuery"
+                 placeholder="{{ searchType === 'order' ? 'Enter Order Number...' : 'Enter Phone or User ID...' }}">
+        </div>
+        <button class="btn btn-search w-100 fw-bold py-2.5" (click)="executeSearch()">Search</button>
+      </div>
     </div>
+
+    <div *ngIf="showOrderList" class="order-list-section mb-4">
+      <hr class="section-divider my-4">
+      
+      <div class="tab-button-wrapper d-flex gap-2 mb-4">
+        <button class="btn btn-tab active">
+          <i class="bi bi-clock-history me-2"></i>Ongoing Orders (2)
+        </button>
+        <button class="btn btn-tab">
+          <i class="bi bi-check2-circle me-2"></i>Completed Orders (5)
+        </button>
+      </div>
+
+      <div class="table-responsive custom-table-card">
+        <table class="table table-dark table-hover m-0">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Items</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th class="text-end">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-purple fw-bold">#TRK-98342710</td>
+              <td>15 June, 2026</td>
+              <td>Wireless Headphones x1</td>
+              <td>$299.00</td>
+              <td><span class="badge bg-purple-light text-purple-bright">In Transit</span></td>
+              <td class="text-end">
+                <button class="btn btn-view-details btn-sm" (click)="viewOrderDetails('#TRK-98342710')">
+                  View Details <i class="bi bi-chevron-down ms-1"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div *ngIf="showOrderDetails" class="order-tracking-detail-section">
+      <hr class="section-divider my-4">
+      
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <div class="detail-summary-card p-4">
+            <h5 class="card-inner-title mb-4">Selected Order Summary</h5>
+            <div class="info-group mb-3">
+              <span class="info-label">Order ID:</span>
+              <span class="info-value text-purple fw-bold">#TRK-98342710</span>
+            </div>
+            <div class="info-group mb-3">
+              <span class="info-label">Expected Delivery:</span>
+              <span class="info-value text-success">18 June, 2026</span>
+            </div>
+            <div class="info-group mb-0">
+              <span class="info-label">Total Amount:</span>
+              <span class="info-value text-white fw-bold">$299.00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+          <div class="detail-timeline-card p-4">
+            <h5 class="card-inner-title mb-4">Tracking History</h5>
+            <div class="custom-timeline">
+              <div class="timeline-step step-done">
+                <div class="step-marker"><i class="bi bi-check-lg"></i></div>
+                <div class="step-text">
+                  <h6 class="m-0 text-white">Order Placed</h6>
+                  <p class="m-0 text-muted small">We have received your order confirmation.</p>
+                  <small class="text-purple">15 June, 2026 - 10:30 AM</small>
+                </div>
+              </div>
+              <div class="timeline-step step-current">
+                <div class="step-marker"><i class="bi bi-truck"></i></div>
+                <div class="step-text">
+                  <h6 class="m-0 text-purple-bright">In Transit</h6>
+                  <p class="m-0 text-light small">Product has been dispatched and is on the way.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </div>

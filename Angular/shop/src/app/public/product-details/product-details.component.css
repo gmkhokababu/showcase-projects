@@ -1,9 +1,23 @@
+/* মেইন র্যাপার লেআউট */
+.details-page-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+/* বুটস্ট্র্যাপের নিজস্ব sticky-top কে এক্সট্রা বুস্ট দেওয়া */
+.sticky-top {
+    position: sticky !important;
+    top: 0;
+    z-index: 1020;
+}
+
 /* টপ বার স্টাইল */
 .details-top-bar {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 12px;
 }
 
@@ -45,15 +59,18 @@
     border-radius: 8px;
 }
 
-/* থাম্বনেইল */
+/* থাম্বনেইল গ্যালারি */
 .thumbnail-container {
     overflow-x: auto;
     padding-bottom: 5px;
+    display: flex;
+    gap: 8px;
 }
 
 .thumb-box {
     width: 70px;
     height: 70px;
+    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 8px;
@@ -74,10 +91,13 @@
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
 }
 
-/* বেসিক ইনফো কার্ড */
-.product-basic-info-card, .description-section, .comments-section {
+/* কার্ডস এবং সেকশনস */
+.product-basic-info-card, 
+.description-section, 
+.comments-section {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
 }
@@ -122,7 +142,7 @@
     font-weight: 500;
 }
 
-/* বাটনসমূহ */
+/* প্রফেশনাল অ্যাকশন বাটন */
 .btn-add-cart {
     background: transparent;
     border: 2px solid #7c3aed;
@@ -149,7 +169,7 @@
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
 }
 
-/* ডিসক্রিপশন ও রিভিউ সেকশন */
+/* কন্টেন্ট টাইটেল ও টেক্সট */
 .section-title {
     color: #ffffff;
     font-weight: 600;
@@ -188,22 +208,4 @@
     background: rgba(255, 255, 255, 0.01);
     border: 1px dashed rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-}
-
-/* ভিডিও থাম্বনেইল ওভারলে */
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-    z-index: 2;
-}
-
-/* ক্যানভাসে ভিডিওর হাইট ফিক্সড করা */
-.image-canvas-wrapper iframe {
-    border-radius: 12px;
-    min-height: 350px;
 }
