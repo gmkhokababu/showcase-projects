@@ -6,8 +6,8 @@ import java.util.Set;
 
 
 @Entity
-@Table(name="user")
-public class User {
+@Table(name="users")
+public class Users {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,21 @@ public class User {
 	@Column(nullable=false)
 	private String password;
 	
+	@Column(nullable=false)
+	private boolean active = true;
 	
+	@Column(nullable=true)
+	private String imgUrl;
+	
+	
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name="user_roles",
@@ -31,7 +45,7 @@ public class User {
 		)
 	private Set<Role> roles= new HashSet<>();
 	
-	public User() {
+	public Users() {
 		
 	}
 
@@ -73,6 +87,14 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+	
+	public boolean isActive() {
+		return active;
+	}
+	
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	
 	
