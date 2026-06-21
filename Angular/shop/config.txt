@@ -4,7 +4,7 @@ npm install bootstrap bootstrap-icons
 
 uninstall bootstrap
 ======================================
-npm uninstall bootstrap
+npm uninstall bootstrap 
 
 for dark mode add this text to index.html 
 ==============================
