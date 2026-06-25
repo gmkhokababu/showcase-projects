@@ -10,8 +10,8 @@ import com.shop.webshop.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/authentication")
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+@RequestMapping("/api/auth")
+@CrossOrigin(origins = "${app.cors.allowed-origins}", allowCredentials = "true")
 public class UserController {
 
 	private final UserService userService;
@@ -68,6 +68,9 @@ public class UserController {
         
         return ResponseEntity.ok("Logged out successfully. Session destroyed.");
     }
+    
+    
+
     
     
     

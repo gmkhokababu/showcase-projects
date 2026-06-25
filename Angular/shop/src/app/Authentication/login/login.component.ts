@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/users/user.service'; // ১. সার্ভিস ইম্পোর্ট করুন
-import { User } from '../../models/user'; // ২. মডেল ইন্টারফেস ইম্পোর্ট করুন
+import { User } from '../../entity/user'; // ২. মডেল ইন্টারফেস ইম্পোর্ট করুন
 import Swal from 'sweetalert2';
 
 @Component({
@@ -62,7 +62,7 @@ export class LoginComponent {
           }
         }).then(() => {
           // Extract roles from the backend response (assuming response.roles exists)
-          const userRoles: string[] = response.roles || [];
+          const userRoles: string[] = response.roles ? response.roles.map((r: any) => r.name) : [];
 
           // Role-based routing logic
           if (userRoles.includes('SYSTEM_ADMIN')) {

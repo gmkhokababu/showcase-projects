@@ -18,12 +18,10 @@ export const routes: Routes = [
             { path: '', redirectTo: 'item', pathMatch: 'full' },
         ]
     },
-
-
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'product-details', component: ProductDetailsComponent },
     { path: 'track-order', component: TrackOrderComponent },
-    {path:'cart', component:CartComponent},
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'cart', component: CartComponent },
     { path: 'registration', component: RegistrationComponent },
     {
         path: 'admin', component: DashboardComponent,

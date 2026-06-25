@@ -8,5 +8,9 @@ public interface UserService {
 	
 	// Authenticates user and returns the Users object if successful
 	Users login(String username, String password);
+	
+	
+	//Admin create 
+	Users createAdmin(Users adminUser);
 
 }
