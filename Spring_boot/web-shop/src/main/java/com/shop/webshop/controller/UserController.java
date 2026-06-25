@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.shop.webshop.model.Users;
+import com.shop.webshop.entity.Users;
 import com.shop.webshop.service.UserService;
 
 import jakarta.servlet.http.HttpSession;

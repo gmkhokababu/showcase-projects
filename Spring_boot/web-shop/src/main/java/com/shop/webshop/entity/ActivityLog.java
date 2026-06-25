@@ -1,4 +1,4 @@
-package com.shop.webshop.model;
+package com.shop.webshop.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

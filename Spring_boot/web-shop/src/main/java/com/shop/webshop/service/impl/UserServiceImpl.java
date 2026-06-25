@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.shop.webshop.model.Users;
+import com.shop.webshop.entity.Users;
 import com.shop.webshop.repo.UsersRepository;
 import com.shop.webshop.service.ActivityLogService;
 import com.shop.webshop.service.UserService;

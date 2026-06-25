@@ -2,7 +2,7 @@ package com.shop.webshop.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.shop.webshop.model.ActivityLog;
+import com.shop.webshop.entity.ActivityLog;
 import com.shop.webshop.repo.ActivityLogRepository;
 import com.shop.webshop.service.ActivityLogService;
 

@@ -1,4 +1,4 @@
-package com.shop.webshop.model;
+package com.shop.webshop.entity;
 
 import jakarta.persistence.*;
 import java.util.HashSet;
@@ -13,8 +13,8 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(nullable=false)
-	private String name;
+//	@Column(nullable=false)
+//	private String name;
 	
 	@Column(unique=true, nullable=false)
 	private String username;
@@ -25,18 +25,22 @@ public class Users {
 	@Column(nullable=false)
 	private boolean active = true;
 	
-	@Column(nullable=true)
-	private String imgUrl;
+//	@Column(nullable=true)
+//	private String imgUrl;
+	
+	@Column(nullable = false, name = "is_locked")
+    private boolean isLocked = false;
 	
 	
-	public String getImgUrl() {
-		return imgUrl;
-	}
+//	public String getImgUrl() {
+//		return imgUrl;
+//	}
 
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
-	}
+//	public void setImgUrl(String imgUrl) {
+//		this.imgUrl = imgUrl;
+//	}
 
+//	Relation with user role
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name="user_roles",
@@ -44,6 +48,28 @@ public class Users {
 			inverseJoinColumns = @JoinColumn(name="role_id")
 		)
 	private Set<Role> roles= new HashSet<>();
+	
+//	Relation with permission
+	@ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "users_permissions",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "permission_id")
+    )
+	private Set<Permission> permissions = new HashSet<>();
+	
+	// Relation with user profile.
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private UserProfile userProfile;
+
+	// Getter এবং Setter
+	public UserProfile getUserProfile() {
+	    return userProfile;
+	}
+
+	public void setUserProfile(UserProfile userProfile) {
+	    this.userProfile = userProfile;
+	}
 	
 	public Users() {
 		
@@ -57,16 +83,24 @@ public class Users {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
 	public String getUsername() {
 		return username;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
 	}
 
 	public void setUsername(String username) {

@@ -7,8 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import com.shop.webshop.model.Role;
-import com.shop.webshop.model.Users;
+import com.shop.webshop.entity.Role;
+import com.shop.webshop.entity.Users;
 import com.shop.webshop.repo.RoleRepository;
 import com.shop.webshop.repo.UsersRepository;
 
@@ -42,7 +42,7 @@ public class DataInitializer implements CommandLineRunner {
 		// ২. ডিফল্ট SYSTEM_ADMIN ইউজার তৈরি করা (যদি না থাকে)
         if (usersRepo.findByUsername("system").isEmpty()) {
             Users systemUser = new Users();
-            systemUser.setName("System Engineer");
+//            systemUser.setName("System Engineer");
             systemUser.setUsername("system");
             // পাসওয়ার্ড এনক্রিপ্ট করে "system123" সেট করা হচ্ছে
             systemUser.setPassword(passwordEncoder.encode("system123")); 

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.shop.webshop.model.Users;
+import com.shop.webshop.entity.Users;
 
 public interface UsersRepository extends JpaRepository<Users, Long>{
 	

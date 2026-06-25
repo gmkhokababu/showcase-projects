@@ -1,7 +1,7 @@
 package com.shop.webshop.service;
 
 
-import com.shop.webshop.model.Users;
+import com.shop.webshop.entity.Users;
 
 
 public interface UserService {
