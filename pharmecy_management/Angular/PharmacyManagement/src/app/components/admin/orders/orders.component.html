@@ -1,0 +1,193 @@
+<div>
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-outline-success" style="height: 2rem;" (click)="goto('products')">
+        <h3 style="margin-top: -.5rem;"> <i class="bi bi-arrow-left"></i><span class="badge text-dark"></span></h3>
+        <!-- <span class="sr-only">unread messages</span> -->
+      </button>
+    </div>
+    <div class="col d-flex justify-content-end">
+      <button type="button" class="btn btn-outline-primary me-2" (click)="showOrders('Requested')">
+        Orders
+        <!-- <h3 style="margin-top: -.5rem;"> <i class="bi bi-arrow-left"></i><span class="badge text-dark"></span></h3> -->
+        <!-- <span class="sr-only">unread messages</span> -->
+      </button>
+      <button type="button" class="btn btn-outline-success me-2" (click)="prcessingOrders('Processing')">
+        Peocessing Order
+        <!-- <h3 style="margin-top: -.5rem;"> <i class="bi bi-arrow-left"></i><span class="badge text-dark"></span></h3> -->
+        <!-- <span class="sr-only">unread messages</span> -->
+      </button>
+      <button type="button" class="btn btn-outline-danger" (click)="cancelOrders('Canceled')">
+        Cancel Order
+        <!-- <h3 style="margin-top: -.5rem;"> <i class="bi bi-arrow-left"></i><span class="badge text-dark"></span></h3> -->
+        <!-- <span class="sr-only">unread messages</span> -->
+      </button>
+    </div>
+  </div>
+
+
+  <ng-template [ngIf]="service=='order-summery'">
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Serial No</th>
+            <!-- <th scope="col">Order Id</th> -->
+            <th scope="col">Invoice No</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer Phone </th>
+            <th scope="col">Customer Address</th>
+            <th scope="col">Date</th>
+            <th scope="col">Total Order</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of orderSummary; let x=index;">
+            <th scope="row">{{x+1}}</th>
+            <!-- <td>{{i.orderId}}</td> -->
+            <td>{{i.invoiceNO}}</td>
+            <td>{{i.customerName}}</td>
+            <td>{{i.customerPhone}}</td>
+            <td>{{i.customerAddress}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.totalOrder}}</td>
+            <td> <button type="button" class="btn btn-outline-primary" (click)="showDetails(i.invoiceNO)">Show
+                Details</button> </td>
+          </tr>
+
+          <!-- <tr>
+                    <th scope="row">Total =</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{subTotal}}</td>
+                  </tr> -->
+
+        </tbody>
+      </table>
+    </div>
+
+  </ng-template>
+
+  <!-- =========================================Order Details Section====================================== -->
+
+  <ng-template [ngIf]="service=='order-details'">
+    <!-- {{orderDetails|json}} -->
+    <div>
+      <table class="table">
+        <thead>
+          <tr>
+
+            <th scope="col" colspan="2">Customer Name :</th>
+            <th scope="col" colspan="2">{{customerName}}</th>
+            <th scope="col" colspan="2">Customer Phone :</th>
+            <th scope="col" colspan="3">{{customerPhone}} </th>
+          </tr>
+          <tr>
+
+
+            <th scope="col" colspan="2">Customer Address :</th>
+            <th scope="col" colspan="2">{{customerAddress}}</th>
+            <th scope="col" colspan="2">Date :</th>
+            <th scope="col" colspan="3">{{date}}</th>
+          </tr>
+          <tr>
+            <th scope="col">Serial No</th>
+            <!-- <th scope="col">Order Id</th> -->
+            <th scope="col">Invoice No</th>
+            <th scope="col">Medicine Name</th>
+            <th scope="col">Generic Phone </th>
+            <th scope="col">Supplier</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Rate</th>
+            <th scope="col">Total</th>
+            <ng-template [ngIf]="status!='Canceled'">
+              <th scope="col">Action</th>
+            </ng-template>
+          </tr>
+        </thead>
+        <!-- orderDetailsId:any
+                invoice:any
+               medicineName:any;
+               genericName:any;
+               supplier:any;
+                qty:any
+                rate:any
+                total:any
+                customerName:any;
+                phone:any;
+                address:any;
+                stockId:any; -->
+        <tbody>
+          <tr *ngFor="let i of orderDetails; let x=index;">
+            <th scope="row">{{x+1}}</th>
+            <!-- <td>{{i.orderId}}</td> -->
+            <td>{{i.invoice}}</td>
+            <td>{{i.medicineName}}</td>
+            <td>{{i.genericName}}</td>
+            <td>{{i.supplier}}</td>
+            <td>{{i.qty}}</td>
+            <td>{{i.rate}}</td>
+            <td>{{i.total}}</td>
+            <ng-template [ngIf]="status!='Canceled'">
+              <td style="text-align: center;">
+                <a type="button" (click)="cancelOrder(i.orderId,i.invoice)">
+                  <h6 style="color: red;">X</h6>
+                </a>
+              </td>
+            </ng-template>
+          </tr>
+
+          <tr>
+
+            <td></td>
+            <!-- <td></td> -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th scope="row">Total =</th>
+            <td>{{subTotal}}</td>
+            <td></td>
+          </tr>
+          <ng-template [ngIf]="status=='Processing'">
+            <tr>
+
+              <td></td>
+              <!-- <td></td> -->
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <th scope="row">Payment =</th>
+              <td colspan="2">
+                <input type="text" class="form-control" id="payment" name="payment" [(ngModel)]="payment">
+              </td>
+
+            </tr>
+          </ng-template>
+
+        </tbody>
+      </table>
+      <ng-template [ngIf]="status=='Requested'">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-outline-primary me-2" (click)="confirmOrder()">Confirm Order</button>
+          <button type="button" class="btn btn-outline-danger" (click)="cancelallORders()">Cancel Order</button>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="status=='Processing'">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-outline-primary me-2" (click)="confirmSale()">Confirm Sale</button>
+          <button type="button" class="btn btn-outline-danger" (click)="cancelallORders()">Cancel Order</button>
+          
+        </div>
+        <!-- {{orderDetails|json}} -->
+      </ng-template>
+
+    </div>
+  </ng-template>
+  
+</div>

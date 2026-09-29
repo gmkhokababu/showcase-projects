@@ -1,0 +1,196 @@
+<div>
+    <div>
+        <form (ngSubmit)="saleOrder()">
+            <!-- ==========================Customer section Start=============================== -->
+
+            <div class="row">
+                <!-- <label for="">Customer Details :</label>
+                <hr> -->
+                <div class="mb-3 col">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="mb-3 col">
+                    <label for="phone" class="form-label">Phone No</label>
+                    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="phone" required>
+                </div>
+                <div class="mb-3 col">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                </div>
+                <div class="mb-3 col">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" [(ngModel)]="address">
+                </div>
+            </div>
+
+
+            <!-- ==========================Customer section End=============================== -->
+            <!-- ==========================Medicine search section start=============================== -->
+            <div class="row">
+                <!-- <label for="">Search Medicine :</label> -->
+                <hr>
+                <div class="mb-3 col">
+                    <label for="exampleInputEmail1" class="form-label">Medicine Name</label>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" required> -->
+                    <select class="form-select" aria-label="Default select example" #dd
+                        (change)="setMedicineName(dd.value)">
+                        <option selected>Select Medicine Neme</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.medicineName}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputPassword1" class="form-label">Generic Name</label>
+                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" required> -->
+                    <select class="form-select" aria-label="Default select example" #aa
+                        (change)="setGenericName(aa.value)">
+                        <option selected>Select Generic Name</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.genericName}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputEmail1" class="form-label">Batch Id</label>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1"> -->
+                    <select class="form-select" aria-label="Default select example" #bb (change)="setBatchid(bb.value)">
+                        <option selected>Select batchId</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.batchId}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputPassword1" class="form-label">Supplier Name</label>
+                    <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+                    <select class="form-select" aria-label="Default select example" #cc
+                        (change)="setSupplierName(cc.value)">
+                        <option selected>Select Supplier</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.supplier}}</option>
+                    </select>
+                </div>
+            </div>
+            <!-- ==========================Medicine search section End=============================== -->
+            <div style="min-height: 150px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Supplier Name</th>
+                            <th scope="col">Medicine Name</th>
+                            <th scope="col">Generic Name</th>
+                            <!-- <th scope="col">Packing Quantity</th> -->
+                            <th scope="col">Batch Id</th>
+                            <th scope="col">Expire Date</th>
+                            <!-- <th scope="col">Total Pack</th> -->
+                            <th scope="col">M.R.P</th>
+                            <!-- <th scope="col">Purchase Rate</th> -->
+                            <th scope="col">Sale Rate</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of allStockBycatagory">
+                            <td scope="row">{{i.supplier}}</td>
+                            <td>{{i.medicineName}}</td>
+                            <td>{{i.genericName}}</td>
+                            <!-- <td>{{i.packingQty}}</td> -->
+                            <td>{{i.batchId}}</td>
+                            <td>{{i.ex_date}}</td>
+                            <!-- <td>{{i.totalpack}}</td> -->
+                            <td>{{i.mrp}}</td>
+                            <!-- <td>{{i.purchaseRate}}</td> -->
+                            <td>{{i.rate}}</td>
+                            <td style="width: 5px;">
+                                <div class="mb-3 col">
+                                    <input type="number" class="form-control" id="qty" name="qty" [(ngModel)]="qty">
+                                </div>
+                            </td>
+                            <td>{{i.rate*qty}}</td>
+                            <td>
+                                <input type="button" class="btn btn-outline-success" (click)="add(i)" value="Add">
+                                <!-- <input type="button" class="btn btn-outline-danger" (click)="remove(i)" value="Remove"> -->
+                                <!-- <button class="btn btn-outline-success" (click)="add(i)">Add</button> -->
+                                <!-- <button  class="btn btn-outline-danger ms-2"(click)="remove(i)">remove</button> -->
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <!-- <label for="">Bills :</label>
+                <hr> -->
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-9">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Medicine Name</th>
+                                    <th scope="col">Generic Name</th>
+                                    <th scope="col">Batch Id</th>
+                                    <th scope="col">Expire Date</th>
+                                    <th scope="col">M.R.P</th>
+                                    <th scope="col">Sale Rate</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let i of preSaleMedicine">
+                                    <td>{{i.medicineName}}</td>
+                                    <td>{{i.genericName}}</td>
+                                    <td>{{i.batchId}}</td>
+                                    <td>{{i.ex_date}}</td>
+                                    <td>{{i.mrp}}</td>
+                                    <td>{{i.rate}}</td>
+                                    <td> {{i.qty}} </td>
+                                    <td>{{i.total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-2">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td scope="col">Total Bill</td>
+                                    <td scope="col">{{subTotal}}</td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="col">Payment</td>
+                                    <td>
+                                        <input type="text" class="form-control" id="payment" name="payment"
+                                            [(ngModel)]="payment">
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="col">Return</td>
+                                    <td>
+                                        {{payment-subTotal}}
+                                    </td>
+                                </tr>
+                                <tr class="row">
+                                    <button type="submit" class="btn btn-primary mt-2 col">Sale</button>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <!-- {{allStock|json}} -->
+    <!-- {{allStockBycatagory|json}} -->
+    <!-- {{searchMedicineName|json}} -->
+    <!-- {{preSaleMedicine|json}} -->
+     <!-- {{qty|json}} -->
+    <!-- {{sales|json}} -->
+    <!-- {{customer|json}} -->
+
+</div>

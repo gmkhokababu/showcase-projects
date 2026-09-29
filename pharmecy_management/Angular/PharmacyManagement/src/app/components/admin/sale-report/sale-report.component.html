@@ -1,0 +1,99 @@
+<div>
+    <div>
+        {{startDate|json}} <br>
+        {{endDate}} 
+        <form (ngSubmit)="getSaleReport()">
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="startDate" class="form-label">Date From</label>
+                    <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="startDate">
+                </div>
+                <div class="mb-3 col">
+                    <label for="endDate" class="form-label">Date To</label>
+                    <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="endDate">
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputEmail1" class="form-label">Medicine Name</label>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" required> -->
+                    <select class="form-select" aria-label="Default select example" #dd
+                        (change)="setMedicineName(dd.value)">
+                        <option selected>Select Medicine Neme</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.medicineName}}</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3 col">
+                    <label for="exampleInputPassword1" class="form-label">Generic Name</label>
+                    <!-- <input type="password" class="form-control" id="exampleInputPassword1" required> -->
+                    <select class="form-select" aria-label="Default select example" #aa
+                        (change)="setGenericName(aa.value)">
+                        <option selected>Select Generic Name</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.genericName}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputEmail1" class="form-label">Batch Id</label>
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1"> -->
+                    <select class="form-select" aria-label="Default select example" #bb (change)="setBatchid(bb.value)">
+                        <option selected>Select batchId</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.batchId}}</option>
+                    </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="exampleInputPassword1" class="form-label">Supplier Name</label>
+                    <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
+                    <select class="form-select" aria-label="Default select example" #cc
+                        (change)="setSupplierName(cc.value)">
+                        <option selected>Select Supplier</option>
+                        <option *ngFor="let i of allStock; let z=index;" [value]="z">{{i.supplier}}</option>
+                    </select>
+                </div>
+
+
+
+                <div class="mb-3 mt-4 col">
+                    <label for="exampleInputPassword1" class="form-label"></label>
+                    <button type="submit" class="btn btn-primary form-control">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">supplier</th>
+            <th scope="col">medicine</th>
+            <th scope="col">generic</th>
+            <th scope="col">batch</th>
+            <th scope="col">customer</th>
+            
+            <th scope="col">Phone</th>
+            <th scope="col">qty</th>
+            <th scope="col">rate</th>
+            <th scope="col">total</th>
+            <th scope="col">date</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of saleReport ">
+            <th scope="row"> {{s.supplier}}  </th>
+            <td>{{s.medicine}} </td>
+            <td>{{s.generic}} </td>
+            <td>{{s.batch}} </td>
+            <td>{{s.customer}} </td>
+            <td>{{s.phone}} </td>
+            <td>{{s.qty}} </td>
+            <td>{{s.rate}} </td>
+            <td>{{s.total}} </td>
+            <td>{{s.date}} </td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

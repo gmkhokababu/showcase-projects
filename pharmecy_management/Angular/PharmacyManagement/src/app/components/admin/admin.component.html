@@ -1,0 +1,51 @@
+<div>
+    <div>
+        <div class="mt-3" style="min-height: 35px; background-color: aqua;">
+
+        </div>
+        <div class="row mt-4">
+            <div class="col-2">
+                <nav style="color: white;">
+                    <ul class="nav flex-column bg-info rounded ms-1 text-white" style="min-height: 550px; color: white;">
+                        <li class="nav-item">
+                          <a class="nav-link active text-white" aria-current="page" routerLink="/admin">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/supplier">Add Supplier</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/purchase">Purchase</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/purchase-report">Purchase Report</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/purchase-return">Return and Damage</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/sale">Sale</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/sale-report">Sale Report</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/orders">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/admin/damage-list">Damage List</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-white" routerLink="/">Log Out</a>
+                        </li>
+                      </ul>
+                </nav>
+            </div>
+            <div class="col-9">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

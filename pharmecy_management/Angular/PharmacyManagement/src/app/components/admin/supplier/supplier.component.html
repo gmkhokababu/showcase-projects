@@ -1,0 +1,33 @@
+<div>
+    <div>
+
+        <form (ngSubmit)="saveSupplier()"> 
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="name" class="form-label">Supplier Name</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name">
+                </div>
+                <div class="mb-3 col">
+                    <label for="email" class="form-label">Supplier Email</label>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="o_phone" class="form-label">Official Phone no</label>
+                    <input type="text" class="form-control" id="o_phone"  name="o_phone" [(ngModel)]="o_phone">
+                </div>
+                <div class="mb-3 col">
+                    <label for="contactPersion" class="form-label">Contact Person</label>
+                    <input type="text" class="form-control" id="contactPersion"  name="contactPersion" [(ngModel)]="contactPersion">
+                </div>
+                <div class="mb-3 col">
+                    <label for="contactPersionPhone" class="form-label">Contact Person Phone No</label>
+                    <input type="text" class="form-control" id="contactPersionPhone"  name="contactPersionPhone" [(ngModel)]="contactPersionPhone">
+                </div>
+            </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+           
+        </form>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+<div>
+    <div>
+        <!-- {{allPurchase|json}} <br> -->
+        <!-- {{allPurchaseList|json}} -->
+         <!-- {{allStock|json}}  -->
+        <form (ngSubmit)="newPurchase()"> 
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="name" class="form-label">Supplier Name</label>
+                    <select class="form-select" aria-label="Default select example" #dd (change)="setSupplierId(dd.value)">
+                        <option selected>Select Supplier</option>
+                        <option *ngFor="let i of allSupplier; let z=index;" [value]="z">{{i.name}}</option>
+                      </select>
+                </div>
+                <div class="mb-3 col">
+                    <label for="medicineName" class="form-label">Medicine Name</label>
+                    <input type="text" class="form-control" id="medicineName" name="medicineName" [(ngModel)]="medicineName">
+                </div>
+                <div class="mb-3 col">
+                    <label for="genericName" class="form-label">Generic Name</label>
+                    <input type="text" class="form-control" id="genericName" name="genericName" [(ngModel)]="genericName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="paking" class="form-label">Packing Quantity</label>
+                    <input type="text" class="form-control" id="paking"  name="paking" [(ngModel)]="paking">
+                </div>
+                <div class="mb-3 col">
+                    <label for="batchId" class="form-label">Batch Id</label>
+                    <input type="text" class="form-control" id="batchId"  name="batchId" [(ngModel)]="batchId">
+                </div>
+                <div class="mb-3 col">
+                    <label for="exDate" class="form-label">Expire Date</label>
+                    <input type="date" class="form-control" id="exDate"  name="exDate" [(ngModel)]="exDate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="totalpack" class="form-label">Total Pack</label>
+                    <input type="text" class="form-control" id="totalpack"  name="totalpack" [(ngModel)]="totalpack">
+                </div>
+                <div class="mb-3 col">
+                    <label for="mrp" class="form-label">M.R.P</label>
+                    <input type="text" class="form-control" id="mrp"  name="mrp" [(ngModel)]="mrp">
+                </div>
+                <div class="mb-3 col">
+                    <label for="purchaseRate" class="form-label">Purchase Rate (pack)</label>
+                    <input type="text" class="form-control" id="purchaseRate"  name="purchaseRate" [(ngModel)]="purchaseRate">
+                </div>
+
+                
+                <div class="mb-3 col">
+                    <label for="saleRate" class="form-label">Sale Rate (pack)</label>
+                    <input type="text" class="form-control" id="saleRate"  name="saleRate" [(ngModel)]="saleRate">
+                </div>
+
+                <div class="mb-3 col">
+                    <label for="saleRate" class="form-label">Invoice</label>
+                    <input type="text" class="form-control" id="invoice"  name="invoice" [(ngModel)]="invoice">
+                </div>
+            </div>
+                <button type="submit" class="btn btn-primary">Add List</button>
+           
+        </form>
+        <hr>
+        <div class="mt-3">
+            <div class="me-auto">
+                <button type="submit" class="btn btn-outline-success me-auto" (click)="savePurchase()">Confirm Purchase</button>
+            </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Supplier Name</th>
+                    <th scope="col">Medicine Name</th>
+                    <th scope="col">Generic Name</th>
+                    <th scope="col">Packing Quantity</th>
+                    <th scope="col">Batch Id</th>
+                    <th scope="col">Expire Date</th>
+                    <th scope="col">Total Pack</th>
+                    <th scope="col">M.R.P</th>
+                    <th scope="col">Purchase Rate</th>
+                    <th scope="col">Sale Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of allPurchaseList">
+                    <td scope="row">{{i.supplierName}}</td>
+                    <td>{{i.medicineName}}</td>
+                    <td>{{i.genericName}}</td>
+                    <td>{{i.packingQty}}</td>
+                    <td>{{i.batchId}}</td>
+                    <td>{{i.exDate}}</td>
+                    <td>{{i.totalpack}}</td>
+                    <td>{{i.mrp}}</td>
+                    <td>{{i.purchaseRate}}</td>
+                    <td>{{i.saleRate}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

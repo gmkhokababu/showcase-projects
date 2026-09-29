@@ -1,0 +1,115 @@
+<div>
+    <div class="">
+        <div class="col-md-6 ">
+            <!-- <a type="submit" class="btn btn-outline-primary me-2" (click)="input()">Add List</a> -->
+            <a type="submit" class="btn btn-outline-danger me-2" (click)="damageList()">Damage List</a>
+            <a type="submit" class="btn btn-outline-success me-2" (click)="returnList()">Damage Return List</a>
+        </div>
+    </div>
+
+    <div class="">
+
+
+        <ng-template [ngIf]="service=='damage-List-Summery'">
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Serial No</th>
+                            <!-- <th scope="col">Order Id</th> -->
+                            <th scope="col">Damage Date</th>
+                            <th scope="col">Invoice No</th>
+                            <th scope="col">Supplier</th>
+                            <!-- <th scope="col">Medicine Name </th>
+            <th scope="col">Generic Name</th>
+            <th scope="col">Batch Id</th>
+            <th scope="col">Date</th> -->
+                            <th scope="col">Damage Summery</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- { "damageId": 1, "damageDate": null, "supplier": "Reneta", "medicineName": "Paracitamol", "paking": 10, "genericName": "Dymando", "batchId": "B1250", "exDate": "2024-12-31", "pursDate": "2024-06-04", "invoice": "100010", "returnQty": 0, "purchaseRate": 8, "status": "Damaged", "purshasId": 7, "total": 6 } -->
+                        <tr *ngFor="let i of damageListSummary; let x=index;">
+                            <th scope="row">{{x+1}}</th>
+                            <!-- <td>{{i.orderId}}</td> -->
+                            <td>{{i.damageDate}}</td>
+                            <td>{{i.invoice}}</td>
+                            <td>{{i.supplier}}</td>
+                            <!-- <td>{{i.medicineName}}</td>
+            <td>{{i.genericName}}</td>
+            <td>{{i.batchId}}</td>
+            <td>{{i.date}}</td> -->
+                            <td>{{i.total}}</td>
+                            <td> <button type="button" class="btn btn-outline-primary"
+                                    (click)="showDetails(i.invoice)">Show
+                                    Details</button> </td>
+                        </tr>
+
+                        <!-- <tr>
+                    <th scope="row">Total =</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{subTotal}}</td>
+                  </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
+
+        </ng-template>
+        <ng-template [ngIf]="service=='damage-details'">
+            <!-- {{orderDetails|json}} -->
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Serial No</th>
+                            <!-- <th scope="col">Order Id</th> -->
+                            <th scope="col">Invoice No</th>
+                            <th scope="col">Medicine Name</th>
+                            <th scope="col">Generic Phone </th>
+                            <th scope="col">Supplier</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                       <!-- { "damageId": 1, "damageDate": null, "supplier": "Reneta", "medicineName": "Paracitamol", "paking": 10, "genericName": "Dymando", "batchId": "B1250", "exDate": "2024-12-31", "pursDate": "2024-06-04", "invoice": "100010", "returnQty": 0, "purchaseRate": 8, "status": "Damaged", "purshasId": 7, "total": 6 } -->
+                    <tbody>
+                        <tr *ngFor="let i of damageListdetails; let x=index;">
+                            <th scope="row">{{x+1}}</th>
+                            <!-- <td>{{i.orderId}}</td> -->
+                            <td>{{i.invoice}}</td>
+                            <td>{{i.medicineName}}</td>
+                            <td>{{i.genericName}}</td>
+                            <td>{{i.supplier}}</td>
+                            <td>{{i.returnQty}}</td>
+                            <td>{{i.purchaseRate}}</td>
+                            <td>{{i.returnQty*i.purchaseRate}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <!-- <td></td> -->
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <th scope="row">Total =</th>
+                            <td>{{subTotal}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-outline-primary me-2" (click)="confirmReturn()">Confirm Sale</button>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+<!-- {{damageListSummary | json}} -->

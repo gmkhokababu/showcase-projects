@@ -1,0 +1,215 @@
+<div>
+
+  <form (ngSubmit)="search()">
+    <div class="row">
+      <div class="mb-3 col-md-3">
+        <!-- <label for="exampleInputEmail1" class="form-label">Batch Id</label> -->
+        <input type="text" class="form-control" id="batchId" placeholder="Batch Id or Invoice No"
+          name="batchIdOrInvoice" [(ngModel)]="batchIdOrInvoice">
+      </div>
+      <!-- <div class="mb-3 col">
+                 <label for="exampleInputPassword1" class="form-label">Invoice</label> 
+                <input type="date" class="form-control" id="invoice" placeholder="Purchase Date" name="invoice" [(ngModel)]="purchaseDate">
+            </div> -->
+      <div class="col-md-1">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+
+      <div class="col-md-2">
+        <select  class="form-select" name="drop" id="" [(ngModel)]="dropdown">
+          <option value="inputselect" selected>Select Input Type</option>
+          <option value="returninput">Return Input</option>
+          <option value="damageinput">Damage Input</option>
+        </select>
+
+        <!-- {{dropdown}} -->
+      </div>
+      <div class="col-md-6 ">
+        <a type="submit" class="btn btn-outline-primary me-2" (click)="input()">Add List</a>
+        <a type="submit" class="btn btn-outline-danger me-2" (click)="damageList()">Damage Input List</a>
+        <a type="submit" class="btn btn-outline-success me-2" (click)="returnList()">Return Input List</a>
+      </div>
+    </div>
+  </form>
+  <ng-template [ngIf]="service=='input-data'">
+    <div class="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Supplier</th>
+            <th scope="col">Medicine</th>
+            <th scope="col">Generic</th>
+            <th scope="col">Batch</th>
+            <!-- <th scope="col">Qty</th>
+                <th scope="col">MRP</th>
+                <th scope="col">P. Rate</th>
+                <th scope="col">total</th>-->
+            <th scope="col">P. date</th>
+            <th scope="col">Exp date</th>
+            <th scope="col">Invoice</th>
+            <th scope="col"class="text-center">Quantity</th>
+            <th scope="col" class="text-center">Action</th>
+
+          </tr>
+        </thead>
+        <!-- "pursDate": "2024-06-07", "supplier": "Reneta", "medicineName": "reneta", "paking": 10, "genericName": "ff", "batchId": "1ewww", "exDate": "2024-07-13", "qty": 100, "mrp": 300, "purchaseRate": 270, "invoice": "100010"  -->
+        <tbody>
+          <tr *ngFor="let s of purchaseReport ">
+            <th scope="row"> {{s.supplier}} </th>
+            <td>{{s.medicineName}} </td>
+            <td>{{s.genericName}} </td>
+            <td>{{s.batchId}} </td>
+            <!-- <td>{{s.qty}} </td>
+                <td>{{s.mrp}} </td>
+                <td>{{s.purchaseRate}} </td>
+                <td>{{s.qty*s.purchaseRate}} </td> -->
+            <td>{{s.pursDate}} </td>
+            <td>{{s.exDate}} </td>
+            <td>{{s.invoice}} </td>
+            <td>
+              <input type="number" class="form-control" id="damageOrReturnQty" placeholder="Quantity" #dd [value]="dd"
+                (input)="updateValue($event)">
+            </td>
+            <td>
+              <ng-template [ngIf]="dropdown=='damageinput'">
+              <button type="submit" class="btn btn-outline-danger me-1" (click)="adddamage(s,dd.value)">Damage</button>
+            </ng-template>
+            <ng-template [ngIf]="dropdown=='returninput'">
+              <button type="submit" class="btn btn-outline-success" (click)="addreturn(s,dd.value)">Return</button>
+            </ng-template>
+            </td>
+
+          </tr>
+
+        </tbody>
+      </table>
+      <!-- {{purchaseReport|json}} -->
+          <!-- Return prodict: {{returnProduct|json}} <br> -->
+          <!-- Damage Prodict : {{damageProduct|json}} -->
+
+          <!-- purchaseReport {{purchaseReport | json}} <br> -->
+          <!-- returnProduct {{returnProduct | json}} <br> -->
+          <!-- damageProduct  {{damageProduct | json}} <br> -->
+
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="service=='damage-list'">
+    <div class="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Supplier</th>
+            <th scope="col">Medicine</th>
+            <th scope="col">Generic</th>
+            <th scope="col">Batch</th>
+            <th scope="col">P. date</th>
+            <th scope="col">Exp date</th>
+            <th scope="col">Invoice</th>
+            <th scope="col">Quantity</th>
+
+          </tr>
+        </thead>
+        <!-- damageId: 0,
+        damageDate: "",
+        supplier: "",
+        medicineName: "",
+        paking: "",
+        genericName: "",
+        batchId: "",
+        exDate: "",
+        pursDate: "",
+        invoice: "",
+        returnQt: 0,
+        purchaseRate: "",
+        status: "",
+        purshasId: 0, -->
+        <tbody>
+          <tr *ngFor="let s of damageProduct ">
+            <th scope="row"> {{s.supplier}} </th>
+            <td>{{s.medicineName}} </td>
+            <td>{{s.genericName}} </td>
+            <td>{{s.batchId}} </td>
+            <td>{{s.pursDate}} </td>
+            <td>{{s.exDate}} </td>
+            <td>{{s.invoice}} </td>
+            <td>
+              {{s.returnQty}}
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-outline-danger me-1" (click)="saveDamage()">Sent to Damage</button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="service=='return-list'">
+    <div class="">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Supplier</th>
+            <th scope="col">Medicine</th>
+            <th scope="col">Generic</th>
+            <th scope="col">Batch</th>
+            <th scope="col">P. date</th>
+            <th scope="col">Exp date</th>
+            <th scope="col">Invoice</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <!-- returnId: 0,
+        returnDate: "",
+        supplier: "",
+        medicineName: "",
+        paking: "",
+        genericName: "",
+        batchId: "",
+        exDate: "",
+        pursDate: "",
+        invoice: "",
+        returnQt: 0,
+        purchaseRate: "",
+        status: "",
+        purshasId: 0, -->
+        <tbody>
+          <tr *ngFor="let s of returnProduct ">
+            <th scope="row"> {{s.supplier}} </th>
+            <td>{{s.medicineName}} </td>
+            <td>{{s.genericName}} </td>
+            <td>{{s.batchId}} </td>
+            <!-- <td>{{s.qty}} </td>
+                <td>{{s.mrp}} </td>
+                <td>{{s.purchaseRate}} </td>
+                <td>{{s.qty*s.purchaseRate}} </td> -->
+            <td>{{s.pursDate}} </td>
+            <td>{{s.exDate}} </td>
+            <td>{{s.invoice}} </td>
+            <td>
+              {{s.returnQty}}
+            </td>
+            <!-- <td>
+              <button type="submit" class="btn btn-outline-danger me-1" (click)="adddamage(s,dd.value)">Damage</button>
+              <button type="submit" class="btn btn-outline-success" (click)="addreturn(s,dd.value)">Return</button>
+            </td> -->
+
+          </tr>
+
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-outline-warning me-1" (click)="confirmReturn()">Confirm Return</button>
+      </div>
+      <!-- {{purchaseReport|json}} -->
+      <!-- Return prodict: {{returnProduct|json}} <br>
+          Damage Prodict : {{damageProduct|json}}
+
+          purchaseReport {{purchaseReport | json}} <br>
+          returnProduct {{returnProduct | json}} <br>
+          damageProduct  {{damageProduct | json}} <br> -->
+
+    </div>
+  </ng-template>
+
+</div>
