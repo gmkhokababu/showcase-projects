@@ -1,0 +1,8 @@
+<nav class="navbar" *ngIf="authService.currentUserValue">
+  <div class="nav-brand">Mess Manager</div>
+  <div class="nav-links">
+    <a routerLink="/dashboard">Dashboard</a>
+    <a (click)="logout()">Logout ({{ authService.currentUserValue?.username }})</a>
+  </div>
+</nav>
+<router-outlet></router-outlet>
