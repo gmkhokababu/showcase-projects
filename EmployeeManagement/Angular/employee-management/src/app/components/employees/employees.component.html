@@ -1,0 +1,110 @@
+<div>
+    <div class="container">
+      <div class="container">
+        <input type="radio" class="btn-check" name="templete" id="option5" value="allEmployee" autocomplete="off" [(ngModel)]="templete" (click)="show()">
+        <label class="btn" for="option5">All Employee</label>
+
+        <input type="radio" class="btn-check" name="templete" id="option6" value="newEmployee" autocomplete="off" [(ngModel)]="templete">
+        <label class="btn" for="option6">Add New Employee</label>
+        
+        <!-- <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+        <label class="btn" for="option8">Radio</label> -->
+    </div>
+
+    <!-- --------------------------------All Employee -->
+    <ng-template [ngIf]="templete=='allEmployee'">
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Employee Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Department</th>
+              <th scope="col">Designation</th>
+              <th scope="col">Joining Date</th>
+              <th scope="col">Salary</th>
+              <th scope="col">Address</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of allemployees">
+              <th scope="row">{{i.employeeId}}</th>
+              <td>{{i.name}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.phoneNo}}</td>
+              <td>{{i.departmentId}}</td>
+              <td>{{i.roleId}}</td>
+              <td>{{i.dateOfJoining}}</td>
+              <td>{{i.salary}}</td>
+              <td>{{i.address}}</td>
+              <td>
+                <button type="button" class="btn btn-warning">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+
+    <!-- ---------------------------------Create New Employee------------------------------------------ -->
+
+    <ng-template [ngIf]="templete=='newEmployee'">
+      <div>
+        <form >
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" >
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone No</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" >
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Role </label>
+                <select class="form-select" aria-label="Default select example"  #dd (change)="changeRole(dd.value)">
+                  <option>Select Role</option>
+                  <option *ngFor="let i of role; let z=index;"  [value]="z"> {{i.roleName | titlecase}} </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Basic Salary</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" >
+              </div>
+            </div>
+
+
+            <div class="col">
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Department</label>
+                <select class="form-select" aria-label="Default select example" #bb (change)="changeDepartment(bb.value)">
+                  <option selected>Select Departments</option>
+                  <option *ngFor="let i of departments; let z=index;"  [value]="z">{{i.departmentName | uppercase}}</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Joining Date</label>
+                <input type="date" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Address</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </ng-template>
+
+        
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <div class="container">
+        <div class="card mt-5 ms-auto bg-dark-subtle me-auto py-5" style="width: 25rem;">
+            <div class="card-body">
+                <form (ngSubmit)="check()">
+                    <div class="mb-3">
+                      <label for="userId" class="form-label">User Id</label>
+                      <input type="text" class="form-control" id="userId" name="userId" [(ngModel)]="userId">
+                    </div>
+                    <div class="mb-5">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+          </div>
+       
+    </div>
+</div>

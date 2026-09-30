@@ -1,0 +1,41 @@
+<div>
+    <div class="container">
+        <input type="radio" class="btn-check" name="templete" id="option5" value="allDepartments" autocomplete="off" [(ngModel)]="templete" (click)="show()">
+        <label class="btn" for="option5">All Departments</label>
+
+        <input type="radio" class="btn-check" name="templete" id="option6" value="CreateDepartment" autocomplete="off" [(ngModel)]="templete">
+        <label class="btn" for="option6">Create New Departments</label>
+        
+        <!-- <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off">
+        <label class="btn" for="option8">Radio</label> -->
+    </div>
+    <ng-template [ngIf]="templete=='allDepartments'">
+       <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Department Id</th>
+                <th scope="col">Department Name</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of alldepartments">
+                <th scope="row">{{i.departmentId}}</th>
+                <td>{{i.departmentName}}</td>
+                
+              </tr>
+            </tbody>
+          </table>
+       </div>
+    </ng-template>
+    <ng-template [ngIf]="templete=='CreateDepartment'">
+        <form (ngSubmit)="addDepartment()">
+            <div class="mb-3">
+              <label for="departmentName" class="form-label">Department Name</label>
+              <input type="text" class="form-control" id="departmentName" name="departmentName" [(ngModel)]="departmentName">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </ng-template>
+</div>
