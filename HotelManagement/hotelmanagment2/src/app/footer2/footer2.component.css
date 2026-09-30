@@ -1,0 +1,35 @@
+.mainRow,.footer{
+    height: 40pt;
+    background-color: hwb(120 4% 25%);
+    padding-top: 10pz;
+  
+  }
+  .footer{
+    height: auto;
+    background-color:black;
+  
+  }
+  .i-l{
+  
+    list-style-type: square;
+    color: black;
+  
+  }
+  
+  .social>li>a{
+    color: white;
+    float: left;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+  .social>li>a:hover{
+    color: white;
+  }
+
+  .footer_title
+{
+	font-size: 18px;
+	font-weight: 700;
+	color: #393939;
+	line-height: 1.2;
+}
