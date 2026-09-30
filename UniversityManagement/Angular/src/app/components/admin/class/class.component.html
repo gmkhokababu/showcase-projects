@@ -1,0 +1,46 @@
+<div>
+    <div class="container" style="background-color: green; height: 30px; width: 900px;">
+        <header>New Class</header>
+    </div>
+    <div class="container pb-3" style="background-color: lightgray; width: 900px;">
+        <form action="" >
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="className" class="form-label">Class Name</label>
+                        <input type="text" class="form-control" id="className" name="className" [(ngModel)]="className">
+                    </div>
+                    <div class="mb-3">
+                        <label for="classPosition" class="form-label">Class Position at Institute</label>
+                        <input type="text" class="form-control" id="classPosition" name="classPosition" [(ngModel)]="classPosition">
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentIdStart" class="form-label">Student Id Start From</label>
+                        <input type="text" class="form-control" id="studentIdStart" name="studentIdStart" [(ngModel)]="studentIdStart">
+                    </div>
+                    <div class="mb-3">
+                        <label for="shift" class="form-label">Shift</label>
+                        <input type="text" class="form-control" id="shift" name="shift" [(ngModel)]="shift">
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="academicYear" class="form-label">Academic Year</label>
+                        <input type="text" class="form-control" id="academicYear" name="academicYear" [(ngModel)]="academicYear">
+                    </div>
+                    <div class="mb-3">
+                        <label for="languageVersion" class="form-label">Language Version</label>
+                        <input type="text" class="form-control" id="languageVersion" name="languageVersion" [(ngModel)]="languageVersion">
+                    </div>
+                    <div class="mb-3">
+                        <label for="numberOfseat" class="form-label">Number of Seat</label>
+                        <input type="text" class="form-control" id="numberOfseat" name="numberOfseat" [(ngModel)]="numberOfseat">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary ">Save/Update</button>
+        </form>
+    </div>
+    
+</div>
