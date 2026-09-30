@@ -1,0 +1,36 @@
+<div>
+    <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Property Id</th>
+                <th scope="col">Property Type</th>
+                <th scope="col">Location</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+                <th scope="col">Property Stutas</th>
+                <th scope="col">Service Type</th>
+                <th scope="col">Rental Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+               
+              <tr *ngFor="let i of allProperty">
+                <th scope="row">{{i.id}}</th>
+                <td>{{i.type}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.size}}</td>
+                <td>{{i.price}}</td>
+                <td>{{i.landtype}}</td>
+                <td>{{i.saleType}}</td>
+                <td>{{i.status}}</td>
+                <td>
+                    <button type="button" class="btn btn-info">Edit</button>
+                    <button type="button" class="btn btn-danger ms-1">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

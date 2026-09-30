@@ -1,0 +1,162 @@
+<div>
+    <div>
+        <ng-template [ngIf]="template=='notification'">
+        <div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Property Id</th>
+                    <!-- <th scope="col">Tenant Name</th> -->
+                    <th scope="col">Tour Type</th>
+                    <!-- <th scope="col">Price</th>
+                    <th scope="col">Property Stutas</th>
+                    <th scope="col">Service Type</th>
+                    <th scope="col">Rental Status</th>-->
+                    <th scope="col">Action</th> 
+                  </tr>
+                </thead>
+               
+                <tbody>
+                   
+                  <tr *ngFor="let i of allshedule">
+                    <th scope="row">{{i.date}}</th>
+                    <th scope="row">{{i.time}}</th>
+                    <td>{{i.propertyId}}</td>
+                    <!-- <td>Abu Hossain</td> -->
+                    <td>{{i.tourType}}</td>
+                    <!-- <td>{{i.landloardId}}</td>
+                    <td>{{i.landtype}}</td>
+                    <td>{{i.saleType}}</td>
+                    <td>{{i.status}}</td> -->
+                    <td>
+                        <button type="button" class="btn btn-info" (click)="takeatour(i)">View Details</button>
+                        
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </ng-template>
+    
+<!-- =============================================Tenant Details====================================== -->
+
+  <ng-template [ngIf]="template=='tenantDetails'">
+    <i class="bi bi-skip-backward-circle fs-2" type="button" (click)="back()"></i><br>
+    <!-- {{tenant|json}} -->
+    <!-- <button type="button" class="btn btn-info ms-auto" (click)="detailsTosaveSchedule()">Set Appointment</button> -->
+    <table class="table">
+      <!-- <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead> -->
+      <tbody>
+        <tr>
+          <th scope="row">Name : </th>
+          <td>{{tenentName}}</td>
+          <th scope="row">Present Address : </th>
+          <td>{{presentAddress}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Permanent Address : </th>
+          <td>{{permanentAddress}}</td>
+          <th scope="row">Occupation : </th>
+          <td>{{ocupation}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-info" (click)="makkeAgreement()">Make Agreement</button>
+    <button type="button" class="btn btn-danger ms-1">Reject</button>
+  </ng-template>
+
+<!-- =============================================Make Agreement====================================== -->
+
+<ng-template [ngIf]="template=='makeagreement'">
+    <i class="bi bi-skip-backward-circle fs-2" type="button" (click)="back()"></i><br>
+    
+    <form (ngSubmit)="savePrintAgreement()">
+      <div class="row mt-5">
+        <div class="row">
+            <div class="mb-3 col">
+              <label for="monthlyFair" class="form-label">Monthly Fair</label>
+              <input type="number" class="form-control" id="monthlyFair" name="monthlyFair" [(ngModel)]="monthlyFair">
+            </div>
+            <div class="mb-3 col">
+                <label for="fiexdDepo" class="form-label">Fiexd Deposit</label>
+                <input type="number" class="form-control" id="fiexdDepo" name="fiexdDepo" [(ngModel)]="fiexdDepo">
+              </div>
+              <div class="md-3 col">
+                <label for="exampleInputEmail1" class="form-label">Agreement</label>
+                <select class="form-select" aria-label="Default select example" id="agreementType" name="agreementType" [(ngModel)]="agreementType">
+                    <option selected>Agreement Type</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Lease">Lease</option>
+                    <option value="Sale">Sale</option>
+                  </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col">
+              <label for="startDate" class="form-label">Start Date</label>
+              <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="startDate">
+            </div>
+            <div class="mb-3 col">
+                <label for="endDate" class="form-label">End Date</label>
+                <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="endDate">
+            </div>
+        </div>
+            <div class="mb-3">
+                <label class="form-label" for="">Rental Responsibility :</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="r1" value="Electricity" name="rElectricity" [(ngModel)]="rElectricity">
+                    <label class="form-check-label" for="r1">Electricity</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="r2" value="Gas" name="rgas" [(ngModel)]="rgas">
+                    <label class="form-check-label" for="r2">Gas</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="r3" value="Water" name="rWater" [(ngModel)]="rWater">
+                    <label class="form-check-label" for="r3">Water</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="r4" value="Internet/Cable" name="rInternetCable" [(ngModel)]="rInternetCable">
+                    <label class="form-check-label" for="r4">Internet/Cable</label>
+                  </div>
+            </div>
+            {{rElectricity.value +rWater+rgas+rInternetCable}}
+            <div class="mb-3">
+                <label class="form-label" for="">Owner Responsibility :</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Electricity</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Gas</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Water</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Internet/Cable</label>
+                  </div>
+            </div>
+            <div class="mb-3 col">
+                <label for="payment" class="form-label">Payment Ammount</label>
+                <input type="number" class="form-control" id="payment" name="payment" [(ngModel)]="payment">
+              </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary" (click)="savePrintAgreement()">Pay & Proceed</button>
+    </form>
+  
+  </ng-template>
+    </div>
+</div>

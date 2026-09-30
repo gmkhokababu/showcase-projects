@@ -1,0 +1,45 @@
+<div>
+    <app-header></app-header>
+    <div>
+        <div class="container my-5">
+          {{propertyId}}
+            <form (ngSubmit)="submit()">
+                <div class="mb-3">
+                  <label for="tenentName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="tenentName" name="tenentName" [(ngModel)]="tenentName">
+                </div>
+                <div class="mb-3">
+                  <label for="phoneNo" class="form-label">Phone No</label>
+                  <input type="text" class="form-control" id="phoneNo" name="phoneNo" [(ngModel)]="phoneNo">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="presentAddress" class="form-label">Present Address</label>
+                    <input type="text" class="form-control" id="presentAddress" name="presentAddress" [(ngModel)]="presentAddress">
+                  </div>
+                  <div class="mb-3">
+                    <label for="permanentAddress" class="form-label">Permanent Address</label>
+                    <input type="text" class="form-control" id="permanentAddress" name="permanentAddress" [(ngModel)]="permanentAddress">
+                  </div>
+                  <div class="mb-3">
+                    <label for="ocupation" class="form-label">Ocupation</label>
+                    <input type="text" class="form-control" id="ocupation" name="ocupation" [(ngModel)]="ocupation">
+                  </div>
+                  <div class="mb-3">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="userName">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" name="password" [(ngModel)]="password">
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+
+    </div>
+    <app-footer></app-footer>
+</div>

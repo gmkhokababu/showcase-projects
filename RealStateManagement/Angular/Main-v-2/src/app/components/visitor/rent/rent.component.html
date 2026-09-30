@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div>
+    <div class="min-height container">
+        <h1 class="text-center mt-4">Find your house or land or commercial space for rent here </h1>
+        <div class="row my-5">
+            <div class="col-4 mt-3" *ngFor="let i of allproperty">
+                <div class="card" style="width: 20rem; height: 18rem;" >
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.landtype | titlecase}} For {{i.saleType | titlecase}}</h5>
+                        <h5 class="card-title">Property Type: {{i.type | titlecase}}</h5>
+                        <p class="card-text">Size : {{i.size }} Square Feet</p>
+                        <p class="card-text">{{i.saleType | titlecase}} Ammount : {{i.price }}</p>
+                        <p class="card-text" style="height: 3rem;">{{i.amenities | titlecase}}</p>
+                        <!-- <a href="#" class="btn btn-primary" *ngIf="i.saleType=='sale'; else modal" (click)="rent(i.id)">Request For Buy</a>
+                        <ng-template #modal> -->
+                            <a type="button" (click)="rent(i.id,i.landlordId)" class="btn btn-primary">Request For {{i.saleType | titlecase}}</a>
+                        <!-- </ng-template> -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

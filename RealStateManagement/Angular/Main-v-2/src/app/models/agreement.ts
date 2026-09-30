@@ -1,0 +1,24 @@
+export class Agreement {
+    agreementId:any;
+	landlordId:any;
+	tenantId:any;
+	monthlyFair:any;
+	fiexdDepo:any;
+	startDate:any;
+	endDate:any;
+	agreementType:any;
+	rentalResponsibility:any;
+	ownerResponsibility:any;
+    constructor(agreementId:any,landlordId:any,tenantId:any,monthlyFair:any,fiexdDepo:any,startDate:any,endDate:any,agreementType:any,rentalResponsibility:any,ownerResponsibility:any){
+        this.agreementId=agreementId;
+        this.landlordId=landlordId;
+        this.tenantId=tenantId;
+        this.monthlyFair=monthlyFair;
+        this.fiexdDepo=fiexdDepo;
+        this.startDate=startDate;
+        this.endDate=endDate;
+        this.agreementType=agreementType;
+        this.rentalResponsibility=rentalResponsibility;
+        this.ownerResponsibility=ownerResponsibility;
+    }
+}
