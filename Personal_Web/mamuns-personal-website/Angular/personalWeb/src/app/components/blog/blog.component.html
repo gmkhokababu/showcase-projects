@@ -1,0 +1,34 @@
+<div>
+    <div>
+        <app-header></app-header>
+        <div class="my-5">
+            <div class="container">
+                <div>
+                    <div class="my-5 " *ngFor="let i of allpost" >
+                        <h2> {{i.heading}} </h2>
+                        <p> {{i.body}} </p>
+                        <button type="button" class="btn btn-warning fw-800 me-auto">Read More...</button>
+                    </div>
+                </div>
+                <form (ngSubmit)="createpost()">
+                    <div class="mb-3">
+                      <label for="blogId" class="form-label">Blog Id</label>
+                      <input type="text" class="form-control" id="blogId" name="blogId" [(ngModel)]="blogId">
+                    </div>
+                    <div class="mb-3">
+                      <label for="heading" class="form-label">Heading</label>
+                      <input type="text" class="form-control" id="heading" name="heading" [(ngModel)]="heading">
+                    </div>
+                    <div class="mb-3">
+                        <label for="heading" class="form-label">Heading</label>
+                        <!-- <input type="text" class="form-control" id="heading" name="heading" [(ngModel)]="heading"> -->
+                        <textarea class="form-control" name="blogpost" id="blogpost" [(ngModel)]="blogpost"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                  </form>
+            </div>
+        </div>
+
+        <app-footer></app-footer>
+    </div>
+</div>

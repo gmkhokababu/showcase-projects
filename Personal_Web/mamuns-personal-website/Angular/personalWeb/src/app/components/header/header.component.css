@@ -1,0 +1,27 @@
+header{
+    font-family: sans-serif;
+}
+.nav-link{
+    color: white;
+    opacity: .75;
+}
+.navbar-brand{
+    color: white;
+    opacity: 1.5;
+    font-weight: 600;
+}
+.nav-link :active{
+    color: white;
+    opacity: 1;
+}
+
+.nav-link:hover{
+    opacity: 1;
+}
+.c-y{
+    color: #eab308;
+}
+.bg{
+    background-color: #020617 ;
+    box-shadow: 3px 0 5px gray;
+}
