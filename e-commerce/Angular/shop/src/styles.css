@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css"; */
+.glass-btn-gradient-pm {
+    /* কালার দুটিকে অনেক গাঢ় ও গভীর পার্পল-মেরুন টোনে নামিয়ে আনা হলো */
+    background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; /* হালকা বর্ডার লাইন */
+    color: rgba(255, 255, 255, 0.85) !important;            /* লেখা পুরোপুরি ধবধবে সাদা না করে অফ-হোয়াইট করা হলো */
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-gradient-pm:hover {
+    /* হোভার করলে বাটনটি আর লাফালাফি করবে না, জাস্ট কালার সামান্য ব্রাইট হবে */
+    background: linear-gradient(135deg, #5b21b6 0%, #86198f 100%) !important;
+    color: #ffffff !important;
+    
+    /* গ্লো ইফেক্টটি একদম কমিয়ে মাত্র ৫% অপাসিটি করা হলো যা চোখে বিন্দুমাত্র লাগবে না */
+    box-shadow: 0 4px 15px rgba(134, 25, 143, 0.15) !important; 
+}
+/*=============================================================*/
+
+.glass-btn-gradient {
+    background: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-gradient:hover {
+    transform: translateY(-2px); /* হোভার করলে বাটনটি হালকা উপরে উঠবে */
+    box-shadow: 0 8px 20px rgba(192, 38, 211, 0.4); /* বাটনের নিচে সুন্দর গ্লো */
+}
+/*======================================*/
+
+
+.glass-btn-outline {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #e2e8f0 !important;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+/* ========================================== */
+.glass-btn-secondary {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; /* হালকা সাদা বর্ডার */
+    color: rgba(255, 255, 255, 0.7) !important;            /* একটু আবছা টেক্সট */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.glass-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05) !important;       /* হোভার করলে সামান্য গ্লাস ইফেক্ট */
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffffff !important;
+}
+/* ==================================================== */
+
+
+[data-bs-theme="dark"] body {
+    background-color: #090712 !important; /* ডিপ ডার্ক-পার্পল বেস কালার */
+    background-image: radial-gradient(at 50% 0%, #110c22 0px, transparent 50%), 
+                      radial-gradient(at 0% 100%, #0d091a 0px, transparent 50%);
+    background-attachment: fixed;
+}
+

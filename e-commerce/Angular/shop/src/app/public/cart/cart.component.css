@@ -1,0 +1,158 @@
+/* ROOT WRAPPER */
+.cart-page-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+/* STICKY TOP NAV CONTEXT */
+.sticky-top {
+    position: sticky !important;
+    top: 0;
+    z-index: 1020;
+}
+
+/* TOP BAR UTILITIES */
+.cart-top-bar {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #a78bfa;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover { color: #ffffff; transform: translateX(-3px); }
+.top-bar-title { color: #f1f5f9; font-size: 1.1rem; font-weight: 600; }
+
+/* GLASSMORPHISM SHARED COMPONENTS */
+.cart-item-card, .order-summary-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+/* EMPTY CART STATE STYLES */
+.empty-icon-wrapper {
+    font-size: 5rem;
+    color: rgba(167, 139, 250, 0.2);
+}
+
+.btn-primary-gradient {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    border: none;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* CART ITEM ROW DESIGN */
+.item-img-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.item-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-name { font-size: 1rem; font-weight: 600; }
+.text-purple { color: #a78bfa; }
+
+/* QUANTITY CONTROLS */
+.qty-control {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-qty {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: #a78bfa;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btn-qty:hover { background: #7c3aed; color: white; }
+.qty-value { min-width: 25px; text-align: center; font-weight: 600; }
+
+/* REMOVE BUTTON ACTION */
+.btn-remove {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+    border: none;
+    border-radius: 8px;
+    width: 38px;
+    height: 38px;
+    transition: all 0.2s;
+}
+
+.btn-remove:hover { background: #ef4444; color: white; }
+
+/* ORDER SUMMARY SIDEBAR DESIGN */
+.summary-title {
+    color: #ffffff;
+    font-weight: 600;
+    border-left: 3px solid #7c3aed;
+    padding-left: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.summary-row .label { color: #94a3b8; }
+.summary-row .value { color: #cbd5e1; font-weight: 500; }
+
+.summary-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.total-row {
+    font-size: 1.25rem;
+}
+
+.total-row .label { color: #ffffff; font-weight: 700; }
+.total-row .value { color: #a78bfa; font-weight: 800; }
+
+/* CHECKOUT SUBMIT BUTTON */
+.btn-checkout {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    border: none;
+    color: white;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.btn-checkout:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+}

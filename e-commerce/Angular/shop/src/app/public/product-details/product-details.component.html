@@ -1,0 +1,93 @@
+<div class="details-page-wrapper">
+  
+  <div class="sticky-top w-100">
+    <app-public-top-nav></app-public-top-nav>
+  </div>
+  
+  <div class="container-xl mt-4 pb-5">
+
+    <div class="details-top-bar d-flex align-items-center gap-3 mb-4">
+      <button class="btn btn-back" (click)="goBack()" title="Go Back">
+        <i class="bi bi-arrow-left fs-4"></i>
+      </button>
+      <h4 class="top-bar-title m-0">{{ product.name }}</h4>
+    </div>
+
+    <div class="row g-4 mb-5">
+      
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="image-canvas-wrapper mb-3">
+          <img [src]="selectedImage" class="img-fluid main-canvas-img" [alt]="product.name">
+        </div>
+        
+        <div class="d-flex gap-2 thumbnail-container">
+          <div *ngFor="let img of product.images" 
+               class="thumb-box" 
+               [class.active]="selectedImage === img"
+               (click)="changeImage(img)">
+            <img [src]="img" class="img-fluid" alt="thumbnail">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-7">
+        <div class="product-basic-info-card p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <span class="badge-brand mb-2">{{ product.brand }}</span>
+            <h2 class="detail-product-title mb-3">{{ product.name }}</h2>
+            
+            <div class="d-flex align-items-center mb-4 gap-3">
+              <span class="detail-price">${{ product.price }}</span>
+              <span class="detail-rating-badge">
+                <i class="bi bi-star-fill text-warning me-1"></i> {{ product.rating }}
+              </span>
+            </div>
+
+            <div class="info-row mb-4">
+              <span class="info-label">Color:</span>
+              <span class="info-value">{{ product.color }}</span>
+            </div>
+          </div>
+
+          <div class="d-flex gap-3 action-buttons-wrapper">
+            <button class="btn btn-add-cart w-50 py-2.5 fw-bold">
+              <i class="bi bi-bag-plus me-2"></i> Add to Cart
+            </button>
+            <button class="btn btn-buy-now w-50 py-2.5 fw-bold">
+              <i class="bi bi-lightning-fill me-1"></i> Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="description-section p-4 mb-5">
+      <h5 class="section-title mb-3">Product Description</h5>
+      <p class="description-text">{{ product.description }}</p>
+    </div>
+
+    <div class="comments-section p-4 mb-5">
+      <h5 class="section-title mb-4">Customer Reviews</h5>
+      <div class="review-card p-3 mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h6 class="reviewer-name m-0">Sohag Ahmed</h6>
+          <span class="review-stars"><i class="bi bi-star-fill text-warning"></i> 5.0</span>
+        </div>
+        <p class="review-comment m-0">The sound quality is outstanding and the bass is really tight. Loved it!</p>
+      </div>
+    </div>
+
+    <div class="related-section">
+      <h5 class="section-title mb-4">You May Also Like</h5>
+      <div class="row row-cols-2 row-cols-md-4 g-3">
+        <div class="col">
+          <div class="related-product-placeholder p-3 text-center">
+            <p class="m-0 text-muted">More Products Coming Soon...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

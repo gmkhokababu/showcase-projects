@@ -1,0 +1,112 @@
+/* ==========================================================================
+   PUBLIC TOP NAV GLASSMORPHISM STYLE
+   ========================================================================== */
+
+/* মেইন ন্যাভবার: নিচে হালকা ১ পিক্সেলের বাউন্ডারি বর্ডার */
+.public-top-glass {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 65px;
+}
+
+/* বাম পাশের ব্র্যান্ড ও লোগো */
+.brand-logo-icon {
+    color: #a78bfa; /* ল্যাভেন্ডার পার্পল লোগো */
+    font-size: 1.3rem;
+}
+
+.public-brand-title {
+    color: #ffffff;
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* মাঝখানের বড় সার্চ বক্সের কাস্টম গ্লাস ডিজাইন */
+.search-center-container {
+    width: 45%; /* পিসিতে মাঝখানের সার্চ বক্সটি বেশ বড় ও চওড়া দেখাবে */
+}
+
+.public-glass-search {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-right: none !important;
+    color: #cbd5e1 !important;
+    font-size: 0.88rem !important;
+    padding: 8px 16px;
+    border-top-left-radius: 8px !important;
+    border-bottom-left-radius: 8px !important;
+}
+
+.public-glass-search:focus {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(147, 51, 234, 0.4) !important;
+    box-shadow: none !important;
+}
+
+.public-search-icon-bg {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-left: none !important;
+    color: rgba(255, 255, 255, 0.4);
+    border-top-right-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    padding: 0 16px;
+}
+
+/* ডানপাশের কার্ট বাটন */
+.public-cart-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #94a3b8 !important;
+    transition: color 0.2s ease;
+}
+
+.public-cart-btn:hover {
+    color: #ffffff !important;
+}
+
+.bg-purple-badge {
+    background-color: #7c3aed !important;
+    font-size: 0.65rem;
+    padding: 4px 6px;
+}
+
+/* প্রফেশনাল লগইন বাটন (ডিপ পার্পল থিম ম্যাচিং) */
+.public-login-btn {
+    background: linear-gradient(135deg, #4c1d95 0%, #701a75 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.public-login-btn:hover {
+    background: linear-gradient(135deg, #5b21b6 0%, #86198f 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(134, 25, 143, 0.2);
+}
+
+
+/* Smooth effect when changing background */
+.public-top-glass {
+    background-color: rgba(255, 255, 255, 0.01) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 65px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* This class will apply automatically when user scrolls down */
+.public-top-glass.scrolled {
+    background-color: rgba(15, 12, 26, 0.85) !important; /* Dark Ash / Dark theme glass color */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Adds slight depth over products */
+}
+
+.logo{
+    width: 2.5rem;
+}
+

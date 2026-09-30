@@ -1,0 +1,211 @@
+/* মেইন র্যাপার লেআউট */
+.details-page-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+/* বুটস্ট্র্যাপের নিজস্ব sticky-top কে এক্সট্রা বুস্ট দেওয়া */
+.sticky-top {
+    position: sticky !important;
+    top: 0;
+    z-index: 1020;
+}
+
+/* টপ বার স্টাইল */
+.details-top-bar {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: #a78bfa;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover {
+    color: #ffffff;
+    transform: translateX(-3px);
+}
+
+.top-bar-title {
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ইমেজ ক্যানভাস */
+.image-canvas-wrapper {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.main-canvas-img {
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* থাম্বনেইল গ্যালারি */
+.thumbnail-container {
+    overflow-x: auto;
+    padding-bottom: 5px;
+    display: flex;
+    gap: 8px;
+}
+
+.thumb-box {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.thumb-box.active {
+    border-color: #7c3aed;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+/* কার্ডস এবং সেকশনস */
+.product-basic-info-card, 
+.description-section, 
+.comments-section {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.badge-brand {
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.detail-product-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.detail-price {
+    color: #a78bfa;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.detail-rating-badge {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffd700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.info-label {
+    color: #94a3b8;
+    margin-right: 10px;
+}
+
+.info-value {
+    color: #f1f5f9;
+    font-weight: 500;
+}
+
+/* প্রফেশনাল অ্যাকশন বাটন */
+.btn-add-cart {
+    background: transparent;
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-add-cart:hover {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+.btn-buy-now {
+    background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-buy-now:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+/* কন্টেন্ট টাইটেল ও টেক্সট */
+.section-title {
+    color: #ffffff;
+    font-weight: 600;
+    border-left: 3px solid #7c3aed;
+    padding-left: 10px;
+}
+
+.description-text {
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.reviewer-name {
+    color: #f1f5f9;
+    font-size: 0.9rem;
+}
+
+.review-stars {
+    font-size: 0.85rem;
+    color: #ffd700;
+}
+
+.review-comment {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.related-product-placeholder {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}

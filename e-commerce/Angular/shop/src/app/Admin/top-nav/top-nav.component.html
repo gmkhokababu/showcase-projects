@@ -1,0 +1,67 @@
+<nav class="navbar top-nav-glass px-3 d-flex justify-content-between align-items-center">
+  
+  <!-- ১. বাম পাশ: হ্যামবার্গার বাটন (শুধু মোবাইলে দেখাবে) + ব্র্যান্ড নেম -->
+  <div class="d-flex align-items-center gap-2">
+    <!-- ৩ লাইনের মোবাইল মেনু বাটন -->
+    <button class="btn text-white p-0 d-md-none me-2" type="button" title="Open Menu" type="button" (click)="onMenuClick()">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    
+    <div class="d-flex flex-column">
+      <span class="brand-title">Root Field</span>
+      <small class="nav-path mt-0 d-none d-md-flex">Dashboard / Home</small>
+    </div>
+  </div>
+
+  <!-- ২. ডান পাশ: সার্চ এবং অন্যান্য বাটন -->
+  <div class="d-flex align-items-center gap-2">
+    
+    <!-- পিসির বড় সার্চ বক্স (শুধু ল্যাপটপে দেখাবে) -->
+    <div class="search-box-container d-none d-lg-block me-2">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control glass-search text-end pe-2" placeholder="Search...">
+        <span class="input-group-text search-icon-bg"><i class="bi bi-search"></i></span>
+      </div>
+    </div>
+
+    <!-- মোবাইলের জন্য এক্সপ্যান্ডেবল সার্চ বাটন (শুধু মোবাইলে দেখাবে) -->
+    <div class="dropdown d-lg-none">
+      <button class="btn icon-nav-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+        <i class="bi bi-search"></i>
+      </button>
+      <!-- এটিতে ক্লিক করলে প্রিমিয়াম একটি সার্চ ইনপুট বক্স নিচ দিয়ে বের হবে -->
+      <div class="dropdown-menu dropdown-menu-end dropdown-glass-menu p-2 mt-2" style="width: 250px;">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control glass-search pe-2 text-start" placeholder="Search anything...">
+          <span class="input-group-text search-icon-bg"><i class="bi bi-search"></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- নোটিফিকেশন বাটন -->
+    <button class="btn icon-nav-btn position-relative" title="Notifications">
+      <i class="bi bi-bell"></i>
+      <span class="position-absolute notification-dot"></span>
+    </button>
+
+    <!-- ল্যাংগুয়েজ বাটন -->
+    <button class="btn icon-nav-btn" title="Language">
+      <i class="bi bi-translate"></i>
+    </button>
+
+    <!-- প্রোফাইল -->
+    <div class="dropdown ms-1">
+      <button class="btn profile-dropdown-btn d-flex align-items-center gap-2 dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <img src="https://unsplash.com" alt="Admin" class="profile-img">
+        <span class="admin-name d-none d-sm-inline">Admin</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark dropdown-glass-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i> My Profile</a></li>
+        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
+        <li><hr class="dropdown-divider border-secondary"></li>
+        <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
