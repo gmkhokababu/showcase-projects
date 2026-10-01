@@ -1,49 +1,42 @@
 # Real State Management System
 
-This project is my first full-stack application, developed using Angular, Spring Boot, Java JDBC, and MySQL. It is designed to manage real estate properties, clients, transactions, and property-related records efficiently.
+This project is a full-stack real estate management system developed to handle property listings, client records, and transaction-related workflows.
 
 ## Project Overview
 
-The system provides a complete solution for managing real estate data and operations. It helps track properties, customers, pricing, sales workflow, and important information in a structured manner.
+The application is focused on managing real estate properties and relevant business operations such as property listing, buyer or client tracking, pricing, and administrative handling.
 
 ## Tech Stack
 
 ### Frontend
 - Angular
 - TypeScript
-- HTML
-- CSS
+- HTML / CSS
 
 ### Backend
-- Spring Boot
 - Java
+- Spring Boot
 - JDBC API
 
 ### Database
 - MySQL
 
-## Key Features
+## Main Features
 
 - Property listing and management
-- Client information tracking
-- Sales and transaction management
-- Price and contract-related data handling
-- Search and filter functionality
-- Administrative reporting and record maintenance
+- Client and customer tracking
+- Transaction and pricing records
+- Search and filtering functionality
+- Reporting and record maintenance
 
 ## Project Goals
 
-This project helped me understand:
-- Full-stack application architecture
-- Angular and Spring Boot integration
-- Database design and management
-- REST API development
+This project helped me practice:
+- Full-stack architecture design
+- Database and backend connectivity
+- CRUD operations in business systems
 - Real-world workflow modeling
 
 ## Project Status
 
-Completed and used as a foundational project in my software development journey.
-
----
-
-Author: Abu Hossain
+Completed and used as one of my foundational full-stack development projects.

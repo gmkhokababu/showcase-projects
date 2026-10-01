@@ -1,18 +1,17 @@
 # University Management System
 
-This project is a comprehensive university management application designed to manage academic, administrative, and student-related operations in a single system.
+This project is a university administration system designed to manage academic records, student information, faculty details, and administrative processes.
 
 ## Project Overview
 
-The system supports the day-to-day functioning of a university by organizing academic records, student information, faculty assignments, and administrative tasks in a structured way.
+The system supports the core needs of university operations, including student registration, course management, academic tracking, department workflow, and reporting.
 
 ## Tech Stack
 
 ### Frontend
 - Angular
 - TypeScript
-- HTML
-- CSS
+- HTML / CSS
 
 ### Backend
 - Java
@@ -22,29 +21,24 @@ The system supports the day-to-day functioning of a university by organizing aca
 ### Database
 - MySQL
 
-## Key Features
+## Main Features
 
-- Student registration and profile management
-- Course and semester management
+- Student profile management
+- Course and semester handling
 - Faculty assignment and academic tracking
 - Grade and result management
-- Attendance and performance monitoring
-- Administrative panel and reporting
-- Department and program management
+- Attendance monitoring
+- Administrative reporting
+- Department and program records
 
 ## Project Goals
 
 This project helped me practice:
-- Large-scale application design
-- Database modeling and data handling
-- Business logic implementation
-- API integration and system coordination
-- Creating structured management workflows
+- Large-scale system design
+- Business and academic workflow modeling
+- Database design and reporting
+- Frontend-backend integration
 
 ## Project Status
 
-Completed as a practical project focused on university administration and system organization.
-
----
-
-Author: Abu Hossain
+Completed as a structured project focused on education management and practical software engineering.
